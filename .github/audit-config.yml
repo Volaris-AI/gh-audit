@@ -1,0 +1,43 @@
+# Audit Configuration
+# Customize which audits run and how they behave.
+
+genres:
+  security:
+    enabled: true
+    skip: []              # Template names to skip (without .md)
+    force-include: []     # Always include these even if auto-detect skips
+  infrastructure:
+    enabled: true
+    skip: []
+    force-include: []
+  team:
+    enabled: auto         # "auto" = only if meaningful git history exists
+    skip: []
+    force-include: []
+    assessment-window: "2 months"
+  hosting:
+    enabled: auto         # "auto" = only if cloud IaC detected
+    skip: []
+    force-include: []
+
+scan:
+  exclude-paths:          # Directories to skip during analysis
+    - node_modules
+    - vendor
+    - dist
+    - build
+    - .git
+    - __pycache__
+  max-files-per-template: 30   # Max files to analyze per template
+  max-lines-per-file: 500     # Truncate large files
+
+review:
+  auto-review: true       # Automatically run reviewer after genre audits
+  health-score-weights:   # Weights for overall health score
+    security: 35
+    infrastructure: 30
+    team: 20
+    hosting: 15
+
+output:
+  directory: "audits"     # Output directory (relative to repo root)
