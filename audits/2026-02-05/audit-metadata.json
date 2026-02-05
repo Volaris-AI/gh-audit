@@ -1,0 +1,57 @@
+{
+  "audit_date": "2026-02-05",
+  "trigger": "workflow_dispatch",
+  "genres_run": [
+    "security",
+    "infrastructure",
+    "team",
+    "hosting/aws"
+  ],
+  "genres_skipped": [
+    {
+      "genre": "hosting/azure",
+      "reason": "No Azure IaC detected (no azurerm_ resources, .bicep files, or azure-pipelines.yml)"
+    }
+  ],
+  "templates_filled": 42,
+  "templates_skipped": [
+    {
+      "template": "security/mobile",
+      "reason": "No mobile code detected"
+    },
+    {
+      "template": "security/voice",
+      "reason": "No voice/IVR code detected"
+    },
+    {
+      "template": "security/ai",
+      "reason": "No AI/ML code detected"
+    },
+    {
+      "template": "infrastructure/mobile",
+      "reason": "No mobile code detected"
+    },
+    {
+      "template": "infrastructure/voice",
+      "reason": "No voice/IVR code detected"
+    },
+    {
+      "template": "infrastructure/ai",
+      "reason": "No AI/ML code detected"
+    },
+    {
+      "template": "infrastructure/front-end",
+      "reason": "No frontend code detected"
+    },
+    {
+      "template": "infrastructure/ui-security",
+      "reason": "No UI code detected"
+    },
+    {
+      "template": "infrastructure/accessibility",
+      "reason": "No UI code detected"
+    }
+  ],
+  "total_files_analyzed": 156,
+  "duration_estimate": "Completed in ~4 agent invocations"
+}
