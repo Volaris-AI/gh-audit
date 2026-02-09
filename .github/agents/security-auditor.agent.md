@@ -76,7 +76,14 @@ After filling all individual templates, fill the genre executive summary:
 - Read `.github/audits/security/executive-summary.md`
 - Aggregate findings across all filled templates
 - Count totals by severity level
+- **Calculate normalized metrics:**
+  - Total findings per 1,000 LOC
+  - Critical findings per 1,000 LOC
+  - High findings per 1,000 LOC
+  - Medium findings per 1,000 LOC
 - Identify the top 3 most critical findings
+- **Note:** The audit-reviewer will use these normalized metrics with a rubric
+  to calculate the security score (not a subtraction-based approach)
 - Write to `audits/YYYY-MM-DD/security/executive-summary.md`
 
 ## Severity Scale

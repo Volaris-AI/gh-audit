@@ -113,7 +113,14 @@ Write filled templates to:
 After filling all templates for a provider:
 - Read `.github/audits/hosting/{provider}/executive-summary.md`
 - Aggregate findings by severity
+- **Count total IaC resources analyzed** (S3 buckets, VMs, security groups, etc)
+- **Calculate normalized metrics:**
+  - Total findings per 10 resources
+  - Critical findings per 10 resources
+  - High findings per 10 resources
 - Identify top critical findings
+- **Note:** The audit-reviewer will use these normalized metrics with a rubric
+  to calculate the hosting score (not a subtraction-based approach)
 - Write to `audits/YYYY-MM-DD/hosting/{provider}/executive-summary.md`
 
 ## Severity Scale

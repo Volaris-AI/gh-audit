@@ -38,6 +38,83 @@ review:
     infrastructure: 30
     team: 20
     hosting: 15
+  
+  # Rubric thresholds for scoring (normalized metrics)
+  # These define the boundaries between score levels (1-5)
+  rubric-thresholds:
+    security:
+      # Findings per 1,000 LOC
+      level-5:  # Score: 95
+        critical-max: 0.0
+        high-max: 0.1
+        total-max: 0.5
+      level-4:  # Score: 82
+        critical-max: 0.0
+        high-max: 0.3
+        total-max: 1.5
+      level-3:  # Score: 65
+        critical-max: 0.1
+        high-max: 0.8
+        total-max: 3.0
+      level-2:  # Score: 42
+        critical-max: 0.3
+        high-max: 2.0
+        total-max: 6.0
+      # Below level-2 thresholds = Level 1 (Score: 15)
+    
+    infrastructure:
+      # Average maturity across dimensions
+      level-5:  # Score: 95
+        avg-min: 4.5
+        dimension-min: 4
+      level-4:  # Score: 82
+        avg-min: 3.8
+        dimension-min: 3
+      level-3:  # Score: 65
+        avg-min: 2.8
+        dimension-min: 2
+      level-2:  # Score: 42
+        avg-min: 2.0
+        dimension-min: 1
+      # Below level-2 thresholds = Level 1 (Score: 15)
+    
+    team:
+      # Average maturity and collaboration
+      level-5:  # Score: 95
+        avg-min: 4.5
+        commit-quality-min: 80  # % well-formatted
+        collaboration-min: 70   # % reviewed/co-authored
+      level-4:  # Score: 82
+        avg-min: 3.8
+        commit-quality-min: 60
+        collaboration-min: 50
+      level-3:  # Score: 65
+        avg-min: 2.8
+        commit-quality-min: 40
+        collaboration-min: 30
+      level-2:  # Score: 42
+        avg-min: 2.0
+      # Below level-2 thresholds = Level 1 (Score: 15)
+    
+    hosting:
+      # Findings per 10 IaC resources
+      level-5:  # Score: 95
+        critical-max: 0.0
+        high-max: 0.5
+        total-max: 2.0
+      level-4:  # Score: 82
+        critical-max: 0.0
+        high-max: 1.5
+        total-max: 4.0
+      level-3:  # Score: 65
+        critical-max: 0.5
+        high-max: 3.0
+        total-max: 8.0
+      level-2:  # Score: 42
+        critical-max: 1.5
+        high-max: 6.0
+        total-max: 15.0
+      # Below level-2 thresholds = Level 1 (Score: 15)
 
 output:
   directory: "audits"     # Output directory (relative to repo root)

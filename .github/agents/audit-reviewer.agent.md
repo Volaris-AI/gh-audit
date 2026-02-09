@@ -70,12 +70,39 @@ Write `audits/YYYY-MM-DD/executive-overview.md` with the following structure:
 | **Total** | **100%** | | **XX** |
 
 ### Score Methodology
-- Security: Based on severity-weighted findings (Critical=-20, High=-10,
-  Medium=-5, Low=-2, Info=0), starting from 100
-- Infrastructure: Average maturity score mapped to 0-100 (1→20, 2→40, 3→60,
-  4→80, 5→100)
-- Team: Average maturity score mapped to 0-100
-- Hosting: Based on severity-weighted findings, same as security
+
+Each genre uses a 5-level rubric based on normalized metrics:
+
+**Security (0-100):** Uses findings per 1,000 LOC
+- Level 5 (95): No Critical, ≤0.1 High per 1K LOC
+- Level 4 (82): No Critical, ≤0.3 High per 1K LOC
+- Level 3 (65): ≤0.1 Critical per 1K LOC, ≤0.8 High per 1K LOC
+- Level 2 (42): ≤0.3 Critical per 1K LOC, ≤2.0 High per 1K LOC
+- Level 1 (15): Exceeds Level 2 thresholds
+
+**Infrastructure (0-100):** Uses maturity dimensions (1-5 scale)
+- Level 5 (95): Average ≥4.5, no dimension below 4
+- Level 4 (82): Average ≥3.8, no dimension below 3
+- Level 3 (65): Average ≥2.8, no dimension below 2
+- Level 2 (42): Average ≥2.0
+- Level 1 (15): Average <2.0 or multiple critical gaps
+
+**Team (0-100):** Uses git metrics and maturity (1-5 scale)
+- Level 5 (95): Average ≥4.5, >80% quality commits, >70% collaboration
+- Level 4 (82): Average ≥3.8, >60% quality commits, >50% collaboration
+- Level 3 (65): Average ≥2.8, >40% quality commits, >30% collaboration
+- Level 2 (42): Average ≥2.0
+- Level 1 (15): Average <2.0 or poor practices
+
+**Hosting (0-100):** Uses findings per 10 IaC resources
+- Level 5 (95): No Critical, ≤0.5 High per 10 resources
+- Level 4 (82): No Critical, ≤1.5 High per 10 resources
+- Level 3 (65): ≤0.5 Critical per 10 resources, ≤3.0 High per 10 resources
+- Level 2 (42): ≤1.5 Critical per 10 resources, ≤6.0 High per 10 resources
+- Level 1 (15): Exceeds Level 2 thresholds
+
+Scores are calculated using rubric thresholds and normalized by codebase size
+or resource count to ensure fair comparisons across projects of different scales.
 
 ## Normalized Metrics
 
@@ -153,34 +180,131 @@ Issues that appear across multiple genres:
 | ... | | | | | |
 ```
 
-## Scoring Rules
+## Scoring Rules — Rubric-Based System
+
+### Overview
+
+Each genre uses a **5-level rubric** based on normalized metrics. This provides
+transparent, evidence-based scoring that accounts for codebase size and
+complexity. The rubrics are designed to be challenging but fair — earning Level
+5 requires excellence, but most functional codebases will land in Level 3-4.
 
 ### Security Score (out of 100)
-Start at 100, subtract:
-- Each Critical finding: -20
-- Each High finding: -10
-- Each Medium finding: -5
-- Each Low finding: -2
-- Each Info finding: 0
-- Minimum score: 0
+
+**Uses rubric based on normalized findings:**
+
+Calculate normalized metrics:
+- `critical_per_1k_loc = (critical_findings / total_loc) * 1000`
+- `high_per_1k_loc = (high_findings / total_loc) * 1000`
+- `total_per_1k_loc = (total_findings / total_loc) * 1000`
+
+Determine level and score:
+
+| Level | Score | Criteria |
+|-------|-------|----------|
+| **5** | 95 | No Critical, ≤0.1 High per 1K LOC, ≤0.5 total per 1K LOC |
+| **4** | 82 | No Critical, ≤0.3 High per 1K LOC, ≤1.5 total per 1K LOC |
+| **3** | 65 | ≤0.1 Critical per 1K LOC, ≤0.8 High per 1K LOC, ≤3.0 total per 1K LOC |
+| **2** | 42 | ≤0.3 Critical per 1K LOC, ≤2.0 High per 1K LOC, ≤6.0 total per 1K LOC |
+| **1** | 15 | Exceeds Level 2 thresholds |
+
+**Special rules:**
+- Authentication bypass or SQL injection Critical finding → cap at Level 2 (42)
+- Zero Critical AND zero High findings → add 5 bonus points (max 100)
 
 ### Infrastructure Score (out of 100)
-Map average maturity (1-5) to 0-100:
-- `score = (average_maturity / 5) * 100`
+
+**Uses rubric based on maturity dimensions:**
+
+Calculate metrics:
+- `avg_maturity = average of all dimension scores (1-5)`
+- `min_dimension = lowest dimension score`
+
+Determine base level and score:
+
+| Level | Score | Criteria |
+|-------|-------|----------|
+| **5** | 95 | Average ≥4.5, no dimension below 4 |
+| **4** | 82 | Average ≥3.8, no dimension below 3 |
+| **3** | 65 | Average ≥2.8, no dimension below 2 |
+| **2** | 42 | Average ≥2.0 |
+| **1** | 15 | Average <2.0 or multiple dimensions at 1 |
+
+**Apply penalty for weak dimensions:**
+- `penalty = max(0, (3 - min_dimension) * 5)`
+- `final_score = base_score - penalty` (minimum 0)
 
 ### Team Score (out of 100)
-Map average maturity (1-5) to 0-100:
-- `score = (average_maturity / 5) * 100`
+
+**Uses rubric based on git analysis and maturity:**
+
+Calculate metrics:
+- `avg_maturity = average of commit quality, collaboration, velocity, docs (1-5)`
+- `collaboration_pct = percentage of commits that were reviewed/collaborative`
+- `doc_coverage_pct = percentage of files with documentation`
+
+Determine base level and score:
+
+| Level | Score | Criteria |
+|-------|-------|----------|
+| **5** | 95 | Average ≥4.5, >80% well-formatted commits, >70% collaboration |
+| **4** | 82 | Average ≥3.8, >60% well-formatted commits, >50% collaboration |
+| **3** | 65 | Average ≥2.8, >40% well-formatted commits, >30% collaboration |
+| **2** | 42 | Average ≥2.0, <40% well-formatted commits |
+| **1** | 15 | Average <2.0 or erratic patterns |
+
+**Apply modifiers:**
+- `collaboration_bonus = min(10, collaboration_pct / 7)` (0-10 points)
+- `doc_penalty = max(0, (50 - doc_coverage_pct) / 5)` (0-10 points)
+- `final_score = base_score + collaboration_bonus - doc_penalty` (capped at 100)
 
 ### Hosting Score (out of 100)
-Same deduction method as Security score.
+
+**Uses rubric based on normalized IaC findings:**
+
+Calculate normalized metrics:
+- `total_resources = count of IaC resources (S3 buckets, VMs, security groups, etc)`
+- `critical_per_10_resources = (critical_findings / total_resources) * 10`
+- `high_per_10_resources = (high_findings / total_resources) * 10`
+- `total_per_10_resources = (total_findings / total_resources) * 10`
+
+Determine level and score:
+
+| Level | Score | Criteria |
+|-------|-------|----------|
+| **5** | 95 | No Critical, ≤0.5 High per 10 resources, ≤2.0 total per 10 resources |
+| **4** | 82 | No Critical, ≤1.5 High per 10 resources, ≤4.0 total per 10 resources |
+| **3** | 65 | ≤0.5 Critical per 10 resources, ≤3.0 High per 10 resources, ≤8.0 total per 10 resources |
+| **2** | 42 | ≤1.5 Critical per 10 resources, ≤6.0 High per 10 resources, ≤15.0 total per 10 resources |
+| **1** | 15 | Exceeds Level 2 thresholds |
+
+**Special rules:**
+- Public S3 buckets or security groups with 0.0.0.0/0 ingress → cap at Level 2 (42)
+- No encryption at rest for data stores → cap at Level 3 (65)
+- Zero Critical AND zero High findings → add 5 bonus points (max 100)
 
 ### Overall Health Score
+
 Weighted average using configured weights (default: security 35%,
 infrastructure 30%, team 20%, hosting 15%).
 
+```
+overall_score = (security_score × 0.35) + 
+                (infrastructure_score × 0.30) + 
+                (team_score × 0.20) + 
+                (hosting_score × 0.15)
+```
+
 If a genre was skipped, redistribute its weight proportionally among the
 genres that did run.
+
+**Example:** If hosting is skipped:
+```
+total_active_weight = 35 + 30 + 20 = 85
+security_adjusted = 35 / 85 = 41.2%
+infrastructure_adjusted = 30 / 85 = 35.3%
+team_adjusted = 20 / 85 = 23.5%
+```
 
 ## Important Guidelines
 
