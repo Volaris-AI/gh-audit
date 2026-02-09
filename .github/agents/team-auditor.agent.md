@@ -102,7 +102,15 @@ Write the filled template to `audits/YYYY-MM-DD/team/{name}.md`.
 After filling all individual templates:
 - Read `.github/audits/team/executive-summary.md`
 - Aggregate team scores across all assessments
+- **Calculate key metrics:**
+  - Average maturity across all dimensions
+  - Percentage of well-formatted commits (follows conventions)
+  - Collaboration percentage (reviewed/co-authored commits)
+  - Documentation coverage percentage
 - Identify key strengths and improvement areas
+- **Note:** The audit-reviewer will use the average maturity plus collaboration
+  and documentation metrics with a rubric to calculate the team score. High
+  collaboration earns bonus points; low documentation applies a penalty.
 - Write to `audits/YYYY-MM-DD/team/executive-summary.md`
 
 ## Scoring Scale

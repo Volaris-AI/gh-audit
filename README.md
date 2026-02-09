@@ -175,14 +175,35 @@ Agents use `file-patterns`, `keywords`, and `config-keys` to determine if a temp
 
 ## Health Score
 
-The executive overview includes a weighted health score (0-100):
+The executive overview includes a weighted health score (0-100) using **rubric-based scoring** with normalized metrics:
 
 | Genre | Default Weight | Scoring Method |
 |-------|---------------|----------------|
-| Security | 35% | Start at 100, deduct per finding severity |
-| Infrastructure | 30% | Average maturity (1-5) mapped to 0-100 |
-| Team | 20% | Average maturity (1-5) mapped to 0-100 |
-| Hosting | 15% | Start at 100, deduct per finding severity |
+| Security | 35% | Rubric based on findings per 1,000 LOC (5 levels) |
+| Infrastructure | 30% | Rubric based on maturity dimensions (1-5 scale per dimension) |
+| Team | 20% | Rubric based on git metrics and collaboration (1-5 scale) |
+| Hosting | 15% | Rubric based on findings per 10 IaC resources (5 levels) |
+
+### Rubric Levels
+
+Each genre uses a **5-level rubric** with clear, measurable criteria:
+
+**Level 5 (90-100)** — Excellent: Industry-leading practices, minimal issues
+**Level 4 (75-89)** — Good: Strong practices with minor gaps
+**Level 3 (55-74)** — Fair: Functional with room for improvement
+**Level 2 (30-54)** — Poor: Significant issues requiring attention
+**Level 1 (0-29)** — Critical: Major problems requiring immediate action
+
+### Normalized Metrics
+
+Scores are normalized by codebase size or resource count to ensure fair comparisons:
+
+- **Security**: Findings per 1,000 lines of code (LOC)
+- **Infrastructure**: Average maturity with penalty for weak dimensions
+- **Team**: Maturity with bonuses/penalties for collaboration and documentation
+- **Hosting**: Findings per 10 IaC resources
+
+This rubric-based approach provides **transparent, evidence-based scoring** that's challenging but fair. Most functional codebases will score in Level 3-4, with Level 5 reserved for truly excellent implementations.
 
 If a genre is skipped, its weight is redistributed proportionally.
 

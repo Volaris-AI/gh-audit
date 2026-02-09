@@ -77,7 +77,11 @@ Write the filled template to `audits/YYYY-MM-DD/infrastructure/{name}.md`.
 After filling all individual templates, fill the genre executive summary:
 - Read `.github/audits/infrastructure/executive-summary.md`
 - Calculate average maturity score across all assessments
-- Identify lowest-scoring areas
+- Identify lowest-scoring areas (dimensions) for targeted improvements
+- Note the weakest dimension score for penalty calculation
+- **Note:** The audit-reviewer will use the average maturity and minimum
+  dimension score with a rubric to calculate the infrastructure score. A low
+  minimum dimension will apply a penalty to encourage balanced maturity.
 - Write to `audits/YYYY-MM-DD/infrastructure/executive-summary.md`
 
 ## Maturity Scale
