@@ -17,7 +17,8 @@ severity-scale: "Critical|High|Medium|Low|Info"
 ## Assessment Overview
 **Team:** [TEAM_NAME]  
 **Audit Date:** [AUDIT_DATE]  
-**Team Size:** [X] developers  
+**Analysis Scope:** All vulnerabilities from security audit + full git history  
+**Team Size:** [X] developers (Active: [X], Inactive: [X], Departed: [X])  
 **Assessment Completed:** [COMPLETION_DATE]  
 **Assessor:** [YOUR_NAME]
 

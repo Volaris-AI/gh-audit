@@ -82,7 +82,7 @@ review:
       # Average maturity (security awareness + team stability)
       level-5:  # Score: 95
         avg-min: 4.5
-        vulns-per-dev-max: 0.1      # Very few vulnerabilities per developer
+        vulns-per-dev-max: 0.1      # ≤1 vulnerability per 10 developers
         churn-rate-max: 5            # % annual churn rate
       level-4:  # Score: 82
         avg-min: 3.8
