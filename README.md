@@ -18,7 +18,7 @@ When triggered, the system:
 |-------|-----------------|--------|
 | **Security** | Vulnerabilities, auth, API security, crypto, dependencies | Static code analysis |
 | **Infrastructure** | Architecture maturity, tech stack, build tooling, testing | Static code analysis |
-| **Team** | Commit quality, collaboration, velocity, contributions | Git history analysis |
+| **Team** | Vulnerability attribution (git blame), developer churn | Git history analysis |
 | **Hosting (AWS)** | IAM, networking, compute, storage, logging, secrets | IaC analysis (Terraform, CloudFormation) |
 | **Hosting (Azure)** | Identity, networking, compute, storage, logging, secrets | IaC analysis (Terraform, Bicep) |
 
@@ -143,7 +143,7 @@ Issue created → audit-orchestrator
 | `audit-orchestrator` | Coordinates all agents, determines scope | read, search, edit, agent |
 | `security-auditor` | Fills security templates with vulnerability findings | read, search, edit |
 | `infrastructure-auditor` | Scores infrastructure maturity (1-5 scale) | read, search, edit |
-| `team-auditor` | Analyzes git history for team metrics | read, search, edit, execute |
+| `team-auditor` | Attributes vulnerabilities to developers, analyzes developer churn | read, search, edit, execute |
 | `hosting-auditor` | Analyzes IaC files for cloud security | read, search, edit |
 | `audit-reviewer` | Produces executive overview with health score | read, search, edit |
 
@@ -181,7 +181,7 @@ The executive overview includes a weighted health score (0-100) using **rubric-b
 |-------|---------------|----------------|
 | Security | 35% | Rubric based on findings per 1,000 LOC (5 levels) |
 | Infrastructure | 30% | Rubric based on maturity dimensions (1-5 scale per dimension) |
-| Team | 20% | Rubric based on git metrics and collaboration (1-5 scale) |
+| Team | 20% | Rubric based on vulnerability attribution and developer churn (1-5 scale) |
 | Hosting | 15% | Rubric based on findings per 10 IaC resources (5 levels) |
 
 ### Rubric Levels
@@ -200,7 +200,7 @@ Scores are normalized by codebase size or resource count to ensure fair comparis
 
 - **Security**: Findings per 1,000 lines of code (LOC)
 - **Infrastructure**: Average maturity with penalty for weak dimensions
-- **Team**: Maturity with bonuses/penalties for collaboration and documentation
+- **Team**: Security awareness maturity and team stability (vulnerabilities per developer, churn rate)
 - **Hosting**: Findings per 10 IaC resources
 
 This rubric-based approach provides **transparent, evidence-based scoring** that's challenging but fair. Most functional codebases will score in Level 3-4, with Level 5 reserved for truly excellent implementations.

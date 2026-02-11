@@ -87,12 +87,12 @@ Each genre uses a 5-level rubric based on normalized metrics:
 - Level 2 (42): Average ≥2.0
 - Level 1 (15): Average <2.0 or multiple critical gaps
 
-**Team (0-100):** Uses git metrics and maturity (1-5 scale)
-- Level 5 (95): Average ≥4.5, >80% quality commits, >70% collaboration
-- Level 4 (82): Average ≥3.8, >60% quality commits, >50% collaboration
-- Level 3 (65): Average ≥2.8, >40% quality commits, >30% collaboration
-- Level 2 (42): Average ≥2.0
-- Level 1 (15): Average <2.0 or poor practices
+**Team (0-100):** Uses maturity scores (1-5 scale) for security awareness and team stability
+- Level 5 (95): Average ≥4.5, minimal vulnerabilities per developer, very low churn
+- Level 4 (82): Average ≥3.8, few vulnerabilities per developer, low churn
+- Level 3 (65): Average ≥2.8, moderate vulnerabilities, normal churn
+- Level 2 (42): Average ≥2.0, many vulnerabilities or high churn
+- Level 1 (15): Average <2.0, critical vulnerabilities or very high churn
 
 **Hosting (0-100):** Uses findings per 10 IaC resources
 - Level 5 (95): No Critical, ≤0.5 High per 10 resources

@@ -2,85 +2,78 @@
 
 ## Overview
 
-This directory contains templates for conducting comprehensive team assessments based on code and git history analysis. These assessments help identify team strengths, areas for improvement, and provide coaching recommendations.
+This directory contains templates for conducting team assessments focused on security vulnerability attribution and developer churn analysis. These assessments help identify security responsibility and team stability risks.
 
-## Assessment Period
+## Assessment Focus
 
-**Standard Assessment Window**: Last 2 months of commits
-
-This timeframe provides enough data to identify patterns while remaining relevant to current team dynamics.
+**Primary Goals:**
+1. **Vulnerability Attribution** - Identify which team members are responsible for security vulnerabilities using git blame analysis
+2. **Developer Churn** - Analyze team stability by examining developer tenure (first commit to last commit)
 
 ## Assessment Templates
 
-### 1. Code and Process Quality
-- **[commit-quality.md](commit-quality.md)** - Assess quality of commit messages and commit patterns
-- **[code-documentation.md](code-documentation.md)** - Assess documentation quality across the codebase
-- **[work-quality.md](work-quality.md)** - Assess quality of work delivered (features vs bugs, tech debt, etc.)
+### 1. Security Responsibility
+- **[vulnerability-attribution.md](vulnerability-attribution.md)** - Attribute security vulnerabilities to developers using git blame
 
-### 2. Team Collaboration
-- **[team-collaboration.md](team-collaboration.md)** - Assess collaboration patterns and code review quality
-- **[velocity-metrics.md](velocity-metrics.md)** - Assess team velocity and productivity metrics
+### 2. Team Stability
+- **[developer-churn.md](developer-churn.md)** - Calculate developer churn based on first and last commits
 
-### 3. Individual Performance
-- **[developer-contributions.md](developer-contributions.md)** - Assess individual developer performance and contributions
-- **[technical-leadership.md](technical-leadership.md)** - Assess technical leadership and mentoring activities
-
-### 4. Outputs and Recommendations
-- **[coaching-recommendations.md](coaching-recommendations.md)** - Template for creating individual coaching plans
-- **[executive-summary.md](executive-summary.md)** - Team assessment executive summary for leadership
+### 3. Executive Summary
+- **[executive-summary.md](executive-summary.md)** - Overall team health summary combining vulnerability attribution and churn analysis
 
 ## Assessment Process
 
-### Phase 1: Data Collection (Week 1)
-1. **Extract Git History**
+### Phase 1: Data Collection
+
+1. **Extract Security Findings**
+   - Read all security audit templates
+   - Extract vulnerabilities with file paths and line numbers
+   - Note severity levels and categories
+
+2. **Run Git Blame Analysis**
    ```bash
-   # Get commits from last 2 months
-   git log --since="2 months ago" --all --pretty=format:"%H|%an|%ae|%ad|%s" --date=iso > commits.csv
+   # For each vulnerable code section
+   git blame -L [start_line],[end_line] [file_path] --line-porcelain
    
-   # Get detailed commit stats
-   git log --since="2 months ago" --all --numstat --pretty=format:"%H|%an|%ae|%ad|%s" > commits-detailed.csv
-   
-   # Get PR information (GitHub)
-   gh pr list --state merged --limit 1000 --json number,title,author,mergedAt,additions,deletions,reviews
+   # Get commit details
+   git show [commit_sha] --format="%H|%an|%ae|%ad|%s" --date=iso
    ```
 
-2. **Clone Repository for Analysis**
-   - Ensure you have full git history (`git clone` without `--depth`)
-   - Review closed PRs from the last 2 months
+3. **Analyze Developer Tenure**
+   ```bash
+   # Get first and last commit for each developer
+   git log --all --format="%an|%ae|%ad" --date=iso
+   
+   # Calculate tenure and classify status
+   # Active: Last commit within 30 days
+   # Inactive: Last commit 30-90 days ago
+   # Departed: Last commit >90 days ago
+   ```
 
-3. **Identify Team Members**
-   - List all active contributors
-   - Note any team changes (new hires, departures)
+### Phase 2: Analysis and Scoring
 
-### Phase 2: Individual Assessments (Week 2-3)
-Complete each assessment template in order:
-1. ✅ [commit-quality.md](commit-quality.md)
-2. ✅ [code-documentation.md](code-documentation.md)
-3. ✅ [work-quality.md](work-quality.md)
-4. ✅ [team-collaboration.md](team-collaboration.md)
-5. ✅ [velocity-metrics.md](velocity-metrics.md)
-6. ✅ [developer-contributions.md](developer-contributions.md)
-7. ✅ [technical-leadership.md](technical-leadership.md)
+1. **Vulnerability Attribution Analysis**
+   - Group vulnerabilities by developer
+   - Calculate distribution by severity
+   - Identify high-risk code areas
+   - Analyze temporal patterns
 
-### Phase 3: Synthesis (Week 4)
-1. ✅ [coaching-recommendations.md](coaching-recommendations.md) - Create individual coaching plans
-2. ✅ [executive-summary.md](executive-summary.md) - Compile executive summary
+2. **Developer Churn Analysis**
+   - Calculate churn rates (30-day, 90-day, 12-month)
+   - Determine average tenure
+   - Identify knowledge risks (orphaned code)
+   - Assess team stability
 
-### Phase 4: Delivery and Follow-up
-1. **Individual Developer Meetings** (1-on-1s)
-   - Share coaching recommendations privately
-   - Discuss strengths and growth areas
-   - Agree on action items and timelines
+3. **Maturity Scoring**
+   - Security Awareness Maturity (1-5 scale)
+   - Team Stability Maturity (1-5 scale)
+   - Overall Team Health Score (0-100)
 
-2. **Team Leadership Meeting**
-   - Present executive summary
-   - Discuss team-level improvements
-   - Allocate resources for coaching and training
+### Phase 3: Reporting
 
-3. **Follow-up Cadence**
-   - 30-day check-in: Review progress on action items
-   - 60-day check-in: Measure improvement
-   - 90-day re-assessment: Full assessment cycle
+1. **Fill Templates** with actual findings
+2. **Generate Executive Summary** with key metrics and recommendations
+3. **Provide Actionable Recommendations** for improvement
 
 ## Scoring System
 
@@ -88,131 +81,181 @@ All assessments use a consistent 1-5 scoring rubric:
 
 | Score | Rating | Description |
 |-------|--------|-------------|
-| 5 | Exceptional | Far exceeds expectations; role model for others |
-| 4 | Strong | Exceeds expectations; consistent high quality |
-| 3 | Proficient | Meets expectations; solid contributor |
-| 2 | Developing | Below expectations; needs improvement |
-| 1 | Needs Attention | Significantly below expectations; requires immediate coaching |
+| 5 | Exceptional | Minimal vulnerabilities; very low churn; excellent practices |
+| 4 | Strong | Few vulnerabilities; low churn; good practices |
+| 3 | Proficient | Moderate vulnerabilities; normal churn; room for improvement |
+| 2 | Developing | Many vulnerabilities; high churn; notable gaps |
+| 1 | Needs Attention | Critical vulnerabilities; very high churn; immediate action needed |
 
 ## Key Principles
 
 ### 🎯 Evidence-Based
-- Every assessment must cite specific commits, PRs, or code examples
-- Include commit SHAs and PR links for reference
-- Avoid subjective opinions without concrete evidence
+- Every assessment must cite specific commits, file paths, and line numbers
+- Include commit SHAs and dates for reference
+- Use quantitative metrics wherever possible
 
-### 🤝 Coaching-Oriented
-- Focus on growth and development, not punishment
-- Identify strengths to build on
+### 🤝 Constructive and Objective
+- Focus on learning and improvement, not blame
+- Consider context (code may have been secure when written)
+- Acknowledge git blame limitations
 - Provide actionable recommendations
-- Suggest specific learning resources
 
-### 📊 Objective Metrics
-- Use quantifiable data wherever possible
-- Compare against team averages and industry standards
-- Track trends over time (improving vs declining)
+### 📊 Data-Driven
+- Use git history as the source of truth
+- Exclude bot/automated commits
+- Calculate normalized metrics (per developer, per module)
+- Track trends over time
 
-### 🔒 Confidential
-- Individual assessments are private
-- Share with developer and their manager only
-- Executive summary aggregates data without identifying struggling individuals
+### 🔒 Respectful and Private
+- Present findings constructively
+- Focus on patterns, not individual criticism
+- Individual attribution is for learning and improvement
+- Share aggregate insights with leadership
 
-## Tools and Resources
+## Attribution Best Practices
 
-### Git Analysis Tools
-- **git-quick-stats**: `brew install git-quick-stats`
-- **git-extras**: `brew install git-extras`
-- **github-linguist**: Language statistics
-- **cloc**: Count lines of code
+### What Git Blame Shows
+- **Last modifier** of each line of code
+- NOT necessarily the person who introduced the vulnerability
+- Context matters: code may have become vulnerable due to:
+  - New attack vectors discovered
+  - Changes in surrounding code
+  - Evolution of security standards
 
-### Code Quality Tools
-- **SonarQube**: Code quality and security analysis
-- **CodeClimate**: Maintainability and test coverage
-- **ESLint/Pylint/etc**: Language-specific linters
+### Handling Edge Cases
+- **Pre-repository history:** Note as "not attributed"
+- **Vendor/generated code:** Exclude from attribution
+- **Multiple authors:** Note ambiguity if unclear
+- **Bot commits:** Filter out automated contributors
 
-### GitHub CLI Commands
+### Interpretation Guidelines
+- Attribution ≠ blame
+- Not all developers have equal security training
+- Older vulnerabilities may reflect outdated practices
+- Reviewers who approved code share responsibility
+- Business pressures may have forced shortcuts
+
+## Churn Analysis Best Practices
+
+### Understanding Churn
+- **Tenure:** Time from first commit to last commit
+- **Active:** Last commit within 30 days
+- **Inactive:** Last commit 30-90 days ago
+- **Departed:** Last commit >90 days ago
+- **Churn Rate:** % of developers who departed in a time period
+
+### Industry Benchmarks
+- **Healthy:** 10-15% annual churn
+- **Concerning:** 15-25% annual churn
+- **Critical:** >25% annual churn
+
+### Knowledge Risk Indicators
+- Code primarily owned by departed developers
+- Critical systems with single-person expertise
+- Poor documentation of departed developer's work
+- No knowledge transfer process
+
+## Common Use Cases
+
+### 1. Security Training Needs
+Use vulnerability attribution to:
+- Identify developers needing security training
+- Focus training on specific vulnerability types
+- Measure improvement over time
+- Celebrate security champions
+
+### 2. Code Review Improvements
+Use findings to:
+- Add security checks to review process
+- Assign security-focused reviewers for high-risk areas
+- Create checklists for common vulnerability patterns
+- Implement automated security scans
+
+### 3. Team Stability Planning
+Use churn analysis to:
+- Identify retention risks
+- Plan succession for critical roles
+- Improve knowledge transfer processes
+- Address knowledge silos
+
+### 4. Resource Allocation
+Use combined insights to:
+- Prioritize refactoring for high-vulnerability areas
+- Allocate training budget effectively
+- Plan hiring to address knowledge gaps
+- Invest in documentation for high-risk areas
+
+## Output Directory Structure
+
+```
+audits/YYYY-MM-DD/team/
+├── vulnerability-attribution.md   # Vulnerability → Developer mapping
+├── developer-churn.md              # Developer tenure and churn analysis
+└── executive-summary.md            # Combined team health assessment
+```
+
+## Tools and Commands
+
+### Git Blame Analysis
 ```bash
-# List merged PRs
-gh pr list --state merged --limit 100
+# Blame specific lines
+git blame -L 45,52 src/auth/authentication.js --line-porcelain
 
-# Get PR details
-gh pr view <number> --json reviews,comments,additions,deletions
+# Get commit details
+git show abc1234 --format="%H|%an|%ae|%ad|%s" --date=iso --no-patch
 
-# List issues closed
-gh issue list --state closed --since "2 months ago"
+# Find files changed by a commit
+git diff-tree --no-commit-id --name-only -r abc1234
+```
+
+### Developer History
+```bash
+# All contributors
+git shortlog -sn --all --no-merges
+
+# Commits by specific author
+git log --author="email@example.com" --all --oneline
+
+# First and last commits
+git log --all --format="%an|%ae|%ad" --date=iso | awk -F'|' '{...}'
+```
+
+### Churn Metrics
+```bash
+# Recent activity (30 days)
+git log --since="30 days ago" --all --format="%an" | sort | uniq -c
+
+# Contributors in a time range
+git shortlog -sn --since="90 days ago" --until="30 days ago" --all
 ```
 
 ## Common Pitfalls to Avoid
 
 ❌ **Don't:**
-- Compare developers with vastly different roles (senior vs junior)
-- Judge based on quantity alone (lines of code, commit count)
-- Make assessments without sufficient data
-- Use assessments punitively
+- Attribute vulnerabilities without understanding context
+- Use findings punitively or to punish developers
+- Compare developers with vastly different roles
 - Share individual scores publicly
+- Ignore bot/automated commits in analysis
+- Attribute vendor or generated code to developers
 
 ✅ **Do:**
-- Consider context (project complexity, team changes, incidents)
-- Look at quality and impact, not just metrics
-- Involve developers in the assessment conversation
-- Focus on growth trajectory, not just current state
-- Celebrate improvements and wins
-
-## Assessment Timeline
-
-```
-Week 1: Data Collection
-├── Day 1-2: Extract git history and PR data
-├── Day 3-4: Review code and documentation
-└── Day 5: Organize evidence and prepare
-
-Week 2-3: Analysis
-├── Day 6-8: Complete quality assessments
-├── Day 9-11: Complete collaboration assessments
-└── Day 12-14: Complete individual assessments
-
-Week 4: Synthesis
-├── Day 15-17: Draft coaching recommendations
-├── Day 18-19: Create executive summary
-└── Day 20: Review and finalize
-
-Week 5: Delivery
-├── Day 21-24: Individual 1-on-1 meetings
-└── Day 25: Leadership presentation
-```
-
-## Output Directory Structure
-
-Create a dated assessment directory:
-```
-docs/audits/team/YYYY-MM-DD-assessment/
-├── README.md (this overview)
-├── data/
-│   ├── commits.csv
-│   ├── prs.json
-│   └── raw-metrics.xlsx
-├── assessments/
-│   ├── commit-quality.md
-│   ├── code-documentation.md
-│   ├── work-quality.md
-│   ├── team-collaboration.md
-│   ├── velocity-metrics.md
-│   ├── developer-contributions.md
-│   └── technical-leadership.md
-├── coaching/
-│   ├── developer-1-coaching.md
-│   ├── developer-2-coaching.md
-│   └── ...
-└── executive-summary.md
-```
+- Provide context for each finding
+- Focus on team-level patterns and improvements
+- Use findings to guide training and process changes
+- Celebrate developers with good security practices
+- Filter out non-human contributors
+- Document limitations and caveats
 
 ## Questions?
 
 For questions about the assessment process or templates:
-- Review individual template READMEs for specific guidance
-- Consult with HR or engineering leadership
-- Refer to engineering management best practices
+- Review the individual template files for detailed guidance
+- Check git command examples in this README
+- Refer to security and churn best practices sections
 
 ## Version History
 
-- **v1.0** (2024-01): Initial template creation
+- **v2.0** (2026-02): Refocused on vulnerability attribution and developer churn
+- **v1.0** (2024-01): Initial template creation (deprecated)
+
