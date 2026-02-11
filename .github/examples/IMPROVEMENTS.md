@@ -20,7 +20,7 @@ The previous executive overview format was:
 - Overall health score and risk level prominently displayed
 - "At a Glance" metrics table for quick scanning
 - "Key Takeaways" - 3 most important points
-- "Top 3 Priorities" with color-coded urgency and timelines
+- "Top 3 Priorities" with color-coded urgency
 
 **Impact:** Executives can now get the key information in 30 seconds without scrolling.
 
@@ -107,7 +107,7 @@ The previous executive overview format was:
 
 ## ✅ Priority Action Plan (ENHANCED)
    - Color-coded by urgency
-   - Impact/Effort/Timeline added
+   - Impact/Effort added
 
 ## 🎲 Risk Assessment (ENHANCED)
    - Likelihood/Impact/Mitigation added

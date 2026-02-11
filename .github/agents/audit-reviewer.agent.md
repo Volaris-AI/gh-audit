@@ -87,9 +87,9 @@ Write `audits/YYYY-MM-DD/executive-overview.md` with the following structure:
 
 ### Top 3 Priorities
 
-1. 🔴 **[Critical Priority]** — [Brief description] — Timeline: [X days]
-2. 🟡 **[High Priority]** — [Brief description] — Timeline: [X weeks]
-3. 🟢 **[Medium Priority]** — [Brief description] — Timeline: [X months]
+1. 🔴 **[Critical Priority]** — [Brief description]
+2. 🟡 **[High Priority]** — [Brief description]
+3. 🟢 **[Medium Priority]** — [Brief description]
 
 ---
 

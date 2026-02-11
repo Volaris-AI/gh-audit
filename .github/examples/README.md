@@ -14,7 +14,7 @@ This sample demonstrates all the new features designed to improve readability:
    - Overall health score and risk level front and center
    - "At a Glance" metrics table for quick scanning
    - Key takeaways highlighting strengths and concerns
-   - Top 3 priorities with timelines
+   - Top 3 priorities with color-coded urgency
 
 2. **Collapsible Sections**
    - Click to expand detailed methodology, findings, and appendices
@@ -42,7 +42,6 @@ This sample demonstrates all the new features designed to improve readability:
    - Color-coded by urgency
    - Impact and effort estimates for each item
    - Specific locations and details
-   - Realistic timelines
 
 7. **Detailed Risk Assessment**
    - Overall risk level with visual indicator
@@ -68,7 +67,7 @@ The previous format was a flat, text-heavy document that was hard to scan and na
 - **Improving scannability**: Visual indicators, tables, and emojis
 - **Reducing cognitive load**: Collapsible sections keep it concise
 - **Adding context**: Rubrics show not just the score but how it was calculated
-- **Improving actionability**: Priority plan has impact/effort/timeline for each item
+- **Improving actionability**: Priority plan has impact/effort for each item
 - **Enhancing clarity**: Better section headers, clear separators, logical flow
 
 ## Usage
