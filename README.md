@@ -126,6 +126,17 @@ audits/YYYY-MM-DD/
   audit-metadata.json           # Stats: genres run, templates filled, skipped
 ```
 
+**Executive Overview Features:**
+- Executive summary with key takeaways and top priorities
+- Collapsible sections for detailed findings and methodology
+- Table-based rubrics showing score breakdown for each category
+- Visual indicators (✅/❌, 🟢🟡🔴) for quick scanning
+- Cross-genre pattern analysis
+- Prioritized action plan with impact/effort estimates
+- Risk assessment with mitigation strategies
+
+[View a sample executive overview](.github/examples/executive-overview-sample.md)
+
 ## Agent Architecture
 
 ```
