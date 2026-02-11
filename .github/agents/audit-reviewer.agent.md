@@ -57,127 +57,442 @@ Write `audits/YYYY-MM-DD/executive-overview.md` with the following structure:
 ```markdown
 # Executive Overview — Codebase Audit YYYY-MM-DD
 
-## Overall Health Score
+> **Generated:** YYYY-MM-DD HH:MM UTC  
+> **Assessment Period:** [timeframe for team metrics, e.g., "Last 2 months"]
+
+---
+
+## 📊 Executive Summary
+
+**Overall Health Score: XX / 100** — [Excellent | Good | Fair | Poor | Critical]
+
+**Risk Level:** [Critical | High | Medium | Low]
+
+### At a Glance
+
+| Metric | Value | Status |
+|--------|-------|--------|
+| Total Lines of Code | X,XXX | — |
+| Total Findings | XX | [🔴 High / 🟡 Moderate / 🟢 Low] |
+| Critical Issues | X | [🔴 Immediate attention / 🟢 None] |
+| High Severity Issues | X | [🔴 Action needed / 🟡 Monitor / 🟢 None] |
+| Average Infrastructure Maturity | X.X / 5 | [🟢 Strong / 🟡 Developing / 🔴 Weak] |
+| Team Collaboration Score | X.X / 5 | [🟢 Strong / 🟡 Developing / 🔴 Weak] |
+
+### Key Takeaways
+
+1. **[Most significant positive finding or strength]**
+2. **[Most critical issue or area of concern]**
+3. **[Key recommendation or action item]**
+
+### Top 3 Priorities
+
+1. 🔴 **[Critical Priority]** — [Brief description] — Timeline: [X days]
+2. 🟡 **[High Priority]** — [Brief description] — Timeline: [X weeks]
+3. 🟢 **[Medium Priority]** — [Brief description] — Timeline: [X months]
+
+---
+
+## 🎯 Overall Health Score
 
 **Score: XX / 100**
 
-| Genre | Weight | Score | Weighted |
-|-------|--------|-------|----------|
-| Security | 35% | XX/100 | XX |
-| Infrastructure | 30% | XX/100 | XX |
-| Team | 20% | XX/100 | XX |
-| Hosting | 15% | XX/100 | XX |
-| **Total** | **100%** | | **XX** |
+| Genre | Weight | Score | Grade | Weighted Contribution |
+|-------|--------|-------|-------|---------------------|
+| 🔒 Security | 35% | XX/100 | [A/B/C/D/F] | XX.X points |
+| 🏗️ Infrastructure | 30% | XX/100 | [A/B/C/D/F] | XX.X points |
+| 👥 Team | 20% | XX/100 | [A/B/C/D/F] | XX.X points |
+| ☁️ Hosting | 15% | XX/100 | [A/B/C/D/F] | XX.X points |
+| **TOTAL** | **100%** | | | **XX.X** |
 
-### Score Methodology
+**Grade Scale:** A (90-100) • B (75-89) • C (55-74) • D (30-54) • F (0-29)
 
-Each genre uses a 5-level rubric based on normalized metrics:
+<details>
+<summary><b>📖 Scoring Methodology</b> (click to expand)</summary>
 
-**Security (0-100):** Uses findings per 1,000 LOC
-- Level 5 (95): No Critical, ≤0.1 High per 1K LOC
-- Level 4 (82): No Critical, ≤0.3 High per 1K LOC
-- Level 3 (65): ≤0.1 Critical per 1K LOC, ≤0.8 High per 1K LOC
-- Level 2 (42): ≤0.3 Critical per 1K LOC, ≤2.0 High per 1K LOC
-- Level 1 (15): Exceeds Level 2 thresholds
+Each genre uses a 5-level rubric based on normalized metrics to ensure fair comparisons across projects of different scales.
 
-**Infrastructure (0-100):** Uses maturity dimensions (1-5 scale)
-- Level 5 (95): Average ≥4.5, no dimension below 4
-- Level 4 (82): Average ≥3.8, no dimension below 3
-- Level 3 (65): Average ≥2.8, no dimension below 2
-- Level 2 (42): Average ≥2.0
-- Level 1 (15): Average <2.0 or multiple critical gaps
+**How to read the rubrics below:**
+- **Level 5** (Score: 95) — Excellent: Industry-leading practices
+- **Level 4** (Score: 82) — Good: Strong practices with minor gaps
+- **Level 3** (Score: 65) — Fair: Functional with room for improvement
+- **Level 2** (Score: 42) — Poor: Significant issues requiring attention
+- **Level 1** (Score: 15) — Critical: Major problems requiring immediate action
 
-**Team (0-100):** Uses git metrics and maturity (1-5 scale)
-- Level 5 (95): Average ≥4.5, >80% quality commits, >70% collaboration
-- Level 4 (82): Average ≥3.8, >60% quality commits, >50% collaboration
-- Level 3 (65): Average ≥2.8, >40% quality commits, >30% collaboration
-- Level 2 (42): Average ≥2.0
-- Level 1 (15): Average <2.0 or poor practices
+Scores are normalized by codebase size (LOC) or resource count to ensure fair comparisons.
 
-**Hosting (0-100):** Uses findings per 10 IaC resources
-- Level 5 (95): No Critical, ≤0.5 High per 10 resources
-- Level 4 (82): No Critical, ≤1.5 High per 10 resources
-- Level 3 (65): ≤0.5 Critical per 10 resources, ≤3.0 High per 10 resources
-- Level 2 (42): ≤1.5 Critical per 10 resources, ≤6.0 High per 10 resources
-- Level 1 (15): Exceeds Level 2 thresholds
+</details>
 
-Scores are calculated using rubric thresholds and normalized by codebase size
-or resource count to ensure fair comparisons across projects of different scales.
+---
 
-## Normalized Metrics
+## 🔒 Security Score Breakdown
 
-| Metric | Value |
-|--------|-------|
-| Total Lines of Code | X,XXX |
-| Total Findings | XX |
-| Findings per 1,000 LOC | X.X |
-| Critical Findings | X |
-| High Findings | X |
-| Average Infrastructure Maturity | X.X / 5 |
-| Average Team Maturity | X.X / 5 |
+**Score: XX / 100** — Level X — [Excellent | Good | Fair | Poor | Critical]
 
-## Cross-Genre Patterns
+### Scoring Rubric
 
-Issues that appear across multiple genres:
+| Level | Score | Your Status | Criteria (per 1,000 LOC) |
+|-------|-------|-------------|--------------------------|
+| **5 — Excellent** | 95 | [✅ / ❌] | No Critical, ≤0.1 High, ≤0.5 total findings |
+| **4 — Good** | 82 | [✅ / ❌] | No Critical, ≤0.3 High, ≤1.5 total findings |
+| **3 — Fair** | 65 | [✅ / ❌] | ≤0.1 Critical, ≤0.8 High, ≤3.0 total findings |
+| **2 — Poor** | 42 | [✅ / ❌] | ≤0.3 Critical, ≤2.0 High, ≤6.0 total findings |
+| **1 — Critical** | 15 | [✅ / ❌] | Exceeds Level 2 thresholds |
 
-1. **[Pattern Name]** — Appears in: Security, Infrastructure
-   - Description and impact
+### Your Metrics
 
-2. **[Pattern Name]** — Appears in: Security, Hosting
-   - Description and impact
+| Metric | Value | Normalized (per 1K LOC) |
+|--------|-------|-------------------------|
+| Total LOC | X,XXX | — |
+| Critical Findings | X | X.XX |
+| High Findings | X | X.XX |
+| Medium Findings | X | X.XX |
+| Low Findings | X | X.XX |
+| Info Findings | X | X.XX |
+| **Total Findings** | **XX** | **X.XX** |
 
-## Priority Matrix
+**Special Considerations:**
+- [✅ / ❌] Zero Critical AND zero High findings (bonus: +5 points)
+- [✅ / ❌] No authentication bypass or SQL injection Critical findings (or capped at Level 2)
 
-### Immediate (0-7 days)
-- [ ] [Critical finding 1] — [Genre] — [Brief description]
-- [ ] [Critical finding 2] — [Genre] — [Brief description]
+<details>
+<summary><b>📋 Top Security Findings</b> (click to expand)</summary>
 
-### Short-term (1-4 weeks)
-- [ ] [High finding 1] — [Genre] — [Brief description]
+| Severity | Finding | Location | Impact |
+|----------|---------|----------|--------|
+| Critical | [Finding description] | [file/module] | [Impact summary] |
+| High | [Finding description] | [file/module] | [Impact summary] |
+| High | [Finding description] | [file/module] | [Impact summary] |
 
-### Medium-term (1-3 months)
-- [ ] [Medium finding 1] — [Genre] — [Brief description]
+[See detailed security reports in `security/` directory]
 
-### Long-term (3-6 months)
-- [ ] [Low finding 1] — [Genre] — [Brief description]
+</details>
 
-## Risk Assessment
+---
 
-**Overall Risk Level:** Critical | High | Medium | Low
+## 🏗️ Infrastructure Score Breakdown
 
-**Justification:**
-[2-3 sentences explaining the overall risk posture based on findings]
+**Score: XX / 100** — Level X — [Excellent | Good | Fair | Poor | Critical]
 
-**Key Risk Factors:**
-1. [Risk factor 1]
-2. [Risk factor 2]
-3. [Risk factor 3]
+### Scoring Rubric
 
-## Coverage Report
+| Level | Score | Your Status | Criteria (maturity dimensions 1-5) |
+|-------|-------|-------------|-------------------------------------|
+| **5 — Excellent** | 95 | [✅ / ❌] | Average ≥4.5, no dimension below 4 |
+| **4 — Good** | 82 | [✅ / ❌] | Average ≥3.8, no dimension below 3 |
+| **3 — Fair** | 65 | [✅ / ❌] | Average ≥2.8, no dimension below 2 |
+| **2 — Poor** | 42 | [✅ / ❌] | Average ≥2.0 |
+| **1 — Critical** | 15 | [✅ / ❌] | Average <2.0 or multiple critical gaps |
+
+### Your Metrics
+
+| Dimension | Score (1-5) | Status | Key Notes |
+|-----------|-------------|--------|-----------|
+| Architecture | X.X | [🟢 / 🟡 / 🔴] | [Brief assessment] |
+| Build & CI/CD | X.X | [🟢 / 🟡 / 🔴] | [Brief assessment] |
+| Testing | X.X | [🟢 / 🟡 / 🔴] | [Brief assessment] |
+| Documentation | X.X | [🟢 / 🟡 / 🔴] | [Brief assessment] |
+| Code Quality | X.X | [🟢 / 🟡 / 🔴] | [Brief assessment] |
+| Error Handling | X.X | [🟢 / 🟡 / 🔴] | [Brief assessment] |
+| **Average** | **X.X** | | |
+
+**Penalty Applied:** [X points for minimum dimension below threshold, or "None"]
+
+<details>
+<summary><b>📋 Infrastructure Highlights</b> (click to expand)</summary>
+
+**Strengths:**
+- [Positive finding 1]
+- [Positive finding 2]
+
+**Areas for Improvement:**
+- [Gap or weakness 1]
+- [Gap or weakness 2]
+
+[See detailed infrastructure reports in `infrastructure/` directory]
+
+</details>
+
+---
+
+## 👥 Team Score Breakdown
+
+**Score: XX / 100** — Level X — [Excellent | Good | Fair | Poor | Critical]
+
+### Scoring Rubric
+
+| Level | Score | Your Status | Criteria |
+|-------|-------|-------------|----------|
+| **5 — Excellent** | 95 | [✅ / ❌] | Avg ≥4.5, >80% quality commits, >70% collaboration |
+| **4 — Good** | 82 | [✅ / ❌] | Avg ≥3.8, >60% quality commits, >50% collaboration |
+| **3 — Fair** | 65 | [✅ / ❌] | Avg ≥2.8, >40% quality commits, >30% collaboration |
+| **2 — Poor** | 42 | [✅ / ❌] | Avg ≥2.0 |
+| **1 — Critical** | 15 | [✅ / ❌] | Avg <2.0 or erratic patterns |
+
+### Your Metrics
+
+| Metric | Score (1-5) | Percentage | Status |
+|--------|-------------|------------|--------|
+| Commit Quality | X.X | XX% well-formatted | [🟢 / 🟡 / 🔴] |
+| Collaboration | X.X | XX% reviewed/co-authored | [🟢 / 🟡 / 🔴] |
+| Velocity | X.X | — | [🟢 / 🟡 / 🔴] |
+| Documentation Coverage | X.X | XX% of files | [🟢 / 🟡 / 🔴] |
+| **Average** | **X.X** | | |
+
+**Modifiers Applied:**
+- Collaboration bonus: +X.X points
+- Documentation penalty: -X.X points
+- **Final Score:** XX/100
+
+<details>
+<summary><b>📋 Team Activity Summary</b> (click to expand)</summary>
+
+| Contributor | Commits | Quality Score | Collaboration | Notes |
+|-------------|---------|---------------|---------------|-------|
+| [Developer 1] | XX | XX% | XX% | [Brief note] |
+| [Developer 2] | XX | XX% | XX% | [Brief note] |
+| [Developer 3] | XX | XX% | XX% | [Brief note] |
+
+**Team Strengths:**
+- [Positive pattern 1]
+- [Positive pattern 2]
+
+**Areas for Improvement:**
+- [Gap or weakness 1]
+- [Gap or weakness 2]
+
+[See detailed team reports in `team/` directory]
+
+</details>
+
+---
+
+## ☁️ Hosting Score Breakdown
+
+**Score: XX / 100** — Level X — [Excellent | Good | Fair | Poor | Critical]
+
+**Provider(s):** [AWS / Azure / Both / N/A]
+
+### Scoring Rubric
+
+| Level | Score | Your Status | Criteria (per 10 IaC resources) |
+|-------|-------|-------------|----------------------------------|
+| **5 — Excellent** | 95 | [✅ / ❌] | No Critical, ≤0.5 High, ≤2.0 total findings |
+| **4 — Good** | 82 | [✅ / ❌] | No Critical, ≤1.5 High, ≤4.0 total findings |
+| **3 — Fair** | 65 | [✅ / ❌] | ≤0.5 Critical, ≤3.0 High, ≤8.0 total findings |
+| **2 — Poor** | 42 | [✅ / ❌] | ≤1.5 Critical, ≤6.0 High, ≤15.0 total findings |
+| **1 — Critical** | 15 | [✅ / ❌] | Exceeds Level 2 thresholds |
+
+### Your Metrics
+
+| Metric | Value | Normalized (per 10 resources) |
+|--------|-------|-------------------------------|
+| Total IaC Resources | XX | — |
+| Critical Findings | X | X.XX |
+| High Findings | X | X.XX |
+| Medium Findings | X | X.XX |
+| Low Findings | X | X.XX |
+| **Total Findings** | **XX** | **X.XX** |
+
+**Special Considerations:**
+- [✅ / ❌] Zero Critical AND zero High findings (bonus: +5 points)
+- [✅ / ❌] No public S3 buckets or 0.0.0.0/0 security groups (or capped at Level 2)
+- [✅ / ❌] Encryption at rest for all data stores (or capped at Level 3)
+
+<details>
+<summary><b>📋 Top Hosting Findings</b> (click to expand)</summary>
+
+| Severity | Finding | Resource | Impact |
+|----------|---------|----------|--------|
+| Critical | [Finding description] | [resource name] | [Impact summary] |
+| High | [Finding description] | [resource name] | [Impact summary] |
+
+[See detailed hosting reports in `hosting/` directory]
+
+</details>
+
+---
+
+## 🔍 Cross-Genre Patterns
+
+These issues appear across multiple audit genres, indicating systemic concerns:
+
+<details open>
+<summary><b>View Cross-Genre Patterns</b></summary>
+
+### Pattern 1: [Pattern Name]
+
+**Genres Affected:** Security, Infrastructure, [others]
+
+**Description:** [Detailed description of the pattern]
+
+**Impact:** [Explanation of why this matters across genres]
+
+**Recommendation:** [Specific action to address the pattern]
+
+---
+
+### Pattern 2: [Pattern Name]
+
+**Genres Affected:** Security, Hosting
+
+**Description:** [Detailed description of the pattern]
+
+**Impact:** [Explanation of why this matters across genres]
+
+**Recommendation:** [Specific action to address the pattern]
+
+[Add more patterns as needed]
+
+</details>
+
+---
+
+## ✅ Priority Action Plan
+
+### 🔴 Immediate (0-7 days) — Critical
+
+- [ ] **[Action Item 1]** — Genre: [Security/Infra/Team/Hosting]  
+  *Impact:* [High/Medium/Low] | *Effort:* [High/Medium/Low]  
+  *Details:* [Brief description and location]
+
+- [ ] **[Action Item 2]** — Genre: [Security/Infra/Team/Hosting]  
+  *Impact:* [High/Medium/Low] | *Effort:* [High/Medium/Low]  
+  *Details:* [Brief description and location]
+
+### 🟡 Short-term (1-4 weeks) — High Priority
+
+- [ ] **[Action Item 1]** — Genre: [Security/Infra/Team/Hosting]  
+  *Impact:* [High/Medium/Low] | *Effort:* [High/Medium/Low]  
+  *Details:* [Brief description]
+
+- [ ] **[Action Item 2]** — Genre: [Security/Infra/Team/Hosting]  
+  *Impact:* [High/Medium/Low] | *Effort:* [High/Medium/Low]  
+  *Details:* [Brief description]
+
+### 🟠 Medium-term (1-3 months) — Moderate Priority
+
+- [ ] **[Action Item 1]** — Genre: [Security/Infra/Team/Hosting]  
+  *Impact:* [High/Medium/Low] | *Effort:* [High/Medium/Low]  
+  *Details:* [Brief description]
+
+### 🟢 Long-term (3-6 months) — Low Priority
+
+- [ ] **[Action Item 1]** — Genre: [Security/Infra/Team/Hosting]  
+  *Impact:* [High/Medium/Low] | *Effort:* [High/Medium/Low]  
+  *Details:* [Brief description]
+
+---
+
+## 🎲 Risk Assessment
+
+**Overall Risk Level:** [🔴 Critical | 🟡 High | 🟠 Medium | 🟢 Low]
+
+### Risk Summary
+
+[2-3 sentences explaining the overall risk posture. Be specific about the most significant risks and their potential business impact.]
+
+### Key Risk Factors
+
+1. **[Risk Factor 1]** — [Critical/High/Medium/Low]  
+   *Likelihood:* [High/Medium/Low] | *Impact:* [High/Medium/Low]  
+   *Mitigation:* [Brief mitigation strategy]
+
+2. **[Risk Factor 2]** — [Critical/High/Medium/Low]  
+   *Likelihood:* [High/Medium/Low] | *Impact:* [High/Medium/Low]  
+   *Mitigation:* [Brief mitigation strategy]
+
+3. **[Risk Factor 3]** — [Critical/High/Medium/Low]  
+   *Likelihood:* [High/Medium/Low] | *Impact:* [High/Medium/Low]  
+   *Mitigation:* [Brief mitigation strategy]
+
+### Risk Trend
+
+[If this is a follow-up audit: Compared to previous audit, risk has [increased/decreased/remained stable]. Key changes: ...]
+
+---
+
+## 📈 Audit Coverage Report
+
+<details>
+<summary><b>View Detailed Coverage</b></summary>
 
 ### Genres Assessed
 
-| Genre | Status | Templates Filled | Templates Skipped |
-|-------|--------|-----------------|-------------------|
-| Security | ✅ Run | X | Y |
-| Infrastructure | ✅ Run | X | Y |
-| Team | ✅ Run | X | Y |
-| Hosting (AWS) | ✅ Run | X | Y |
-| Hosting (Azure) | ⏭️ Skipped | — | — |
+| Genre | Status | Templates Filled | Templates Skipped | Coverage |
+|-------|--------|-----------------|-------------------|----------|
+| 🔒 Security | ✅ Run | X | Y | XX% |
+| 🏗️ Infrastructure | ✅ Run | X | Y | XX% |
+| 👥 Team | ✅ Run | X | Y | XX% |
+| ☁️ Hosting (AWS) | ✅ Run | X | Y | XX% |
+| ☁️ Hosting (Azure) | ⏭️ Skipped | — | — | N/A |
 
 ### Templates Skipped
+
 | Template | Genre | Reason |
 |----------|-------|--------|
-| mobile.md | Security | No mobile code detected |
-| voice.md | Security | No voice/IVR code detected |
+| `mobile.md` | Security | No mobile code detected |
+| `voice.md` | Security | No voice/IVR code detected |
 
-## Appendix — Finding Counts by Template
+### Assessment Scope
 
-| Template | Critical | High | Medium | Low | Info |
-|----------|----------|------|--------|-----|------|
-| security/authentication | X | X | X | X | X |
-| security/api | X | X | X | X | X |
-| ... | | | | | |
+**Time Period:** [Date range for analysis]
+
+**Codebase Scope:**
+- Lines of code analyzed: X,XXX
+- Files analyzed: XXX
+- Directories excluded: [list excluded paths]
+
+**IaC Resources Analyzed:** XX resources across [AWS/Azure/both]
+
+</details>
+
+---
+
+## 📎 Appendix
+
+<details>
+<summary><b>Finding Counts by Template</b></summary>
+
+### Security Findings
+
+| Template | Critical | High | Medium | Low | Info | Total |
+|----------|----------|------|--------|-----|------|-------|
+| `authentication.md` | X | X | X | X | X | XX |
+| `api.md` | X | X | X | X | X | XX |
+| `crypto.md` | X | X | X | X | X | XX |
+| [other templates...] | | | | | | |
+
+### Infrastructure Findings
+
+| Template | Maturity Score | Key Strengths | Key Gaps |
+|----------|---------------|---------------|----------|
+| `architecture.md` | X.X / 5 | [strengths] | [gaps] |
+| `build-tools.md` | X.X / 5 | [strengths] | [gaps] |
+| [other templates...] | | | |
+
+### Team Findings
+
+| Template | Score | Key Metrics | Status |
+|----------|-------|-------------|--------|
+| `commit-quality.md` | X.X / 5 | [metrics] | [status] |
+| `velocity.md` | X.X / 5 | [metrics] | [status] |
+| [other templates...] | | | |
+
+### Hosting Findings
+
+| Template | Critical | High | Medium | Low | Total |
+|----------|----------|------|--------|-----|-------|
+| `aws/iam-security.md` | X | X | X | X | XX |
+| `aws/networking.md` | X | X | X | X | XX |
+| [other templates...] | | | | | |
+
+</details>
+
+---
+
+**Report prepared by GitHub Audit System**  
+*For detailed findings, see individual genre reports in their respective directories*
 ```
 
 ## Scoring Rules — Rubric-Based System
