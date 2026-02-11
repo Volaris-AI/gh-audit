@@ -79,21 +79,23 @@ review:
       # Below level-2 thresholds = Level 1 (Score: 15)
     
     team:
-      # Average maturity and collaboration
+      # Average maturity (security awareness + team stability)
       level-5:  # Score: 95
         avg-min: 4.5
-        commit-quality-min: 80  # % well-formatted
-        collaboration-min: 70   # % reviewed/co-authored
+        vulns-per-dev-max: 0.1      # Very few vulnerabilities per developer
+        churn-rate-max: 5            # % annual churn rate
       level-4:  # Score: 82
         avg-min: 3.8
-        commit-quality-min: 60
-        collaboration-min: 50
+        vulns-per-dev-max: 0.5
+        churn-rate-max: 10
       level-3:  # Score: 65
         avg-min: 2.8
-        commit-quality-min: 40
-        collaboration-min: 30
+        vulns-per-dev-max: 2.0
+        churn-rate-max: 15
       level-2:  # Score: 42
         avg-min: 2.0
+        vulns-per-dev-max: 5.0
+        churn-rate-max: 25
       # Below level-2 thresholds = Level 1 (Score: 15)
     
     hosting:
