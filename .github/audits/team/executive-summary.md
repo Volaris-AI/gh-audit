@@ -45,57 +45,50 @@ severity-scale: "Critical|High|Medium|Low|Info"
 
 | Assessment Area | Score/Metric | Status |
 |----------------|--------------|--------|
-| **Vulnerability Attribution** | [X] vulns attributed | [🟢/🟡/🔴] |
 | **Developer Churn Rate** | [X]% (90-day) | [🟢/🟡/🔴] |
 | **Average Tenure** | [X] months | [🟢/🟡/🔴] |
+| **Team Stability Maturity** | [X] / 5 | [🟢/🟡/🔴] |
 | **Overall Team Health** | **[X] / 100** | **[🟢/🟡/🔴]** |
 
 **Status Legend:**
-- 🟢 **Healthy** (Score: 65+): Good security practices and stable team
+- 🟢 **Healthy** (Score: 65+): Stable team with low churn
 - 🟡 **Adequate** (Score: 42-64): Room for improvement
 - 🔴 **Needs Attention** (Score: <42): Requires immediate action
 
 **Scoring Methodology:**
-The team health score is based on:
-- Average maturity rating (1-5) across team dimensions
-- Bonus points for low vulnerability attribution rates
-- Penalty for high churn rates or short tenure
+The team health score is **entirely based on churn metrics**:
+- Base score = Team Stability Maturity (1-5) × 20
+- Bonus: +5 if average tenure >24 months
+- Penalty: -10 if >3 developers departed in last 90 days
+- Penalty: -5 if critical systems owned by single departed developer
 
 ---
 
-## Vulnerability Attribution Summary
+## Vulnerability Statistics Summary
 
-### Total Vulnerabilities Analyzed
+**Note:** Detailed vulnerability attribution (committed by / approved by for each vulnerability) is included in individual security audit templates. This section provides aggregate statistics only.
 
-| Severity | Count | Attributed | Not Attributed | % Attributed |
-|----------|-------|------------|----------------|--------------|
-| Critical | [X] | [X] | [X] | [X]% |
-| High | [X] | [X] | [X] | [X]% |
-| Medium | [X] | [X] | [X] | [X]% |
-| Low | [X] | [X] | [X] | [X]% |
-| **Total** | **[X]** | **[X]** | **[X]** | **[X]%** |
+### Total Vulnerabilities from Security Audit
 
-### Vulnerability Distribution by Developer
+| Severity | Count | % of Total |
+|----------|-------|------------|
+| Critical | [X] | [X]% |
+| High | [X] | [X]% |
+| Medium | [X] | [X]% |
+| Low | [X] | [X]% |
+| **Total** | **[X]** | **100%** |
 
-| Developer | Critical | High | Medium | Low | Total | % of Team's Vulns |
-|-----------|----------|------|--------|-----|-------|-------------------|
-| [Developer 1] | [X] | [X] | [X] | [X] | [X] | [X]% |
-| [Developer 2] | [X] | [X] | [X] | [X] | [X] | [X]% |
-| [Developer 3] | [X] | [X] | [X] | [X] | [X] | [X]% |
-| [Developer 4] | [X] | [X] | [X] | [X] | [X] | [X]% |
-| [Developer 5] | [X] | [X] | [X] | [X] | [X] | [X]% |
+### Developer Involvement in Vulnerabilities
 
-### Key Patterns
+| Developer | Committed | Approved | Total Involvement |
+|-----------|-----------|----------|-------------------|
+| [Developer 1] | [X] | [X] | [X] |
+| [Developer 2] | [X] | [X] | [X] |
+| [Developer 3] | [X] | [X] | [X] |
+| [Developer 4] | [X] | [X] | [X] |
+| [Developer 5] | [X] | [X] | [X] |
 
-**Most Common Vulnerability Types:**
-1. [Vulnerability Category]: [X] occurrences
-2. [Vulnerability Category]: [X] occurrences
-3. [Vulnerability Category]: [X] occurrences
-
-**High-Risk Code Areas:**
-1. [Module/Directory]: [X] vulnerabilities
-2. [Module/Directory]: [X] vulnerabilities
-3. [Module/Directory]: [X] vulnerabilities
+**For detailed breakdown by severity and category, see [vulnerability-statistics.md](vulnerability-statistics.md)**
 
 ---
 
@@ -231,20 +224,6 @@ The team health score is based on:
 ---
 
 ## Maturity Assessment
-
-### Security Awareness Maturity
-
-**Score:** [X] / 5
-
-| Level | Description | Assessment |
-|-------|-------------|------------|
-| 5 - Exceptional | Proactive security culture; minimal vulnerabilities | [ ] |
-| 4 - Strong | Good security practices; few critical issues | [ ] |
-| 3 - Proficient | Basic security awareness; room for improvement | [ ] |
-| 2 - Developing | Inconsistent security practices; notable gaps | [ ] |
-| 1 - Needs Attention | Significant security issues requiring immediate action | [ ] |
-
-**Justification:** [Why this score was assigned]
 
 ### Team Stability Maturity
 

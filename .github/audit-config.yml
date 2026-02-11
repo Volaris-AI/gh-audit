@@ -79,23 +79,23 @@ review:
       # Below level-2 thresholds = Level 1 (Score: 15)
     
     team:
-      # Average maturity (security awareness + team stability)
+      # Team stability maturity only (churn-based scoring)
       level-5:  # Score: 95
-        avg-min: 4.5
-        vulns-per-dev-max: 0.1      # ≤1 vulnerability per 10 developers
-        churn-rate-max: 5            # % annual churn rate
+        maturity-min: 4.5               # Team Stability Maturity score
+        churn-rate-max: 5               # % annual churn rate
+        avg-tenure-min: 24              # months
       level-4:  # Score: 82
-        avg-min: 3.8
-        vulns-per-dev-max: 0.5
+        maturity-min: 3.8
         churn-rate-max: 10
+        avg-tenure-min: 18
       level-3:  # Score: 65
-        avg-min: 2.8
-        vulns-per-dev-max: 2.0
+        maturity-min: 2.8
         churn-rate-max: 15
+        avg-tenure-min: 12
       level-2:  # Score: 42
-        avg-min: 2.0
-        vulns-per-dev-max: 5.0
+        maturity-min: 2.0
         churn-rate-max: 25
+        avg-tenure-min: 6
       # Below level-2 thresholds = Level 1 (Score: 15)
     
     hosting:

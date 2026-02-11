@@ -87,12 +87,12 @@ Each genre uses a 5-level rubric based on normalized metrics:
 - Level 2 (42): Average ≥2.0
 - Level 1 (15): Average <2.0 or multiple critical gaps
 
-**Team (0-100):** Uses maturity scores (1-5 scale) for security awareness and team stability
-- Level 5 (95): Average ≥4.5, minimal vulnerabilities per developer, very low churn
-- Level 4 (82): Average ≥3.8, few vulnerabilities per developer, low churn
-- Level 3 (65): Average ≥2.8, moderate vulnerabilities, normal churn
-- Level 2 (42): Average ≥2.0, many vulnerabilities or high churn
-- Level 1 (15): Average <2.0, critical vulnerabilities or very high churn
+**Team (0-100):** Uses Team Stability Maturity (1-5 scale) based entirely on churn
+- Level 5 (95): Maturity ≥4.5, very low churn (<5%), avg tenure >24 months
+- Level 4 (82): Maturity ≥3.8, low churn (5-10%), avg tenure >18 months
+- Level 3 (65): Maturity ≥2.8, normal churn (10-15%), avg tenure >12 months
+- Level 2 (42): Maturity ≥2.0, high churn (15-25%), avg tenure >6 months
+- Level 1 (15): Maturity <2.0, critical churn (>25%)
 
 **Hosting (0-100):** Uses findings per 10 IaC resources
 - Level 5 (95): No Critical, ≤0.5 High per 10 resources

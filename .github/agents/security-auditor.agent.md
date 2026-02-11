@@ -3,11 +3,13 @@ name: security-auditor
 description: >
   Fills security audit templates by analyzing the codebase for vulnerabilities,
   misconfigurations, and security anti-patterns. Produces severity-rated
-  findings with evidence (file paths and line numbers).
+  findings with evidence (file paths and line numbers). Uses git history to
+  attribute vulnerabilities to developers.
 tools:
   - read
   - search
   - edit
+  - execute
 ---
 
 # Security Auditor
@@ -62,9 +64,33 @@ For each checklist item in the template:
 Fill in all assessment sections:
 - **Finding ratings**: Set `[ ] Pass [x] Fail [ ] N/A` etc.
 - **Issues Found tables**: Add rows with severity, issue description, file
-  location, and impact
+  location, committed by, approved by, and impact
 - **Configuration sections**: Fill with actual values found in code
 - **Recommendations**: Provide specific, actionable recommendations
+
+**For each vulnerability/issue, use git history to identify:**
+
+1. **Committed By**: Run git blame to find who last modified the vulnerable code
+   ```bash
+   git blame -L [start_line],[end_line] [file_path] --line-porcelain
+   ```
+   Extract the author name and email from the output.
+
+2. **Approved By**: Find the PR that introduced or last modified this code
+   ```bash
+   # Find commits that touched this file/line
+   git log --oneline [file_path] | head -5
+   
+   # For each commit, check if it was part of a PR
+   gh pr list --search "[commit_sha]" --state merged --json number,author,reviews
+   ```
+   If the code was merged via PR, list the reviewers who approved it.
+   If no PR was found, leave "Approved By" as "Direct commit (no PR review)".
+
+**Example Issues Table Entry:**
+```markdown
+| High | JWT tokens never expire | src/auth/jwt.js:45-52 | john@example.com | jane@example.com, bob@example.com | Tokens remain valid indefinitely |
+```
 
 ### 5. Write Output
 

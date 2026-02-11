@@ -2,44 +2,32 @@
 
 ## Overview
 
-This directory contains templates for conducting team assessments focused on security vulnerability attribution and developer churn analysis. These assessments help identify security responsibility and team stability risks.
+This directory contains templates for assessing team stability through developer churn analysis and compiling aggregate vulnerability statistics. Team health scoring is **entirely based on churn metrics**.
 
 ## Assessment Focus
 
 **Primary Goals:**
-1. **Vulnerability Attribution** - Identify which team members are responsible for security vulnerabilities using git blame analysis
-2. **Developer Churn** - Analyze team stability by examining developer tenure (first commit to last commit)
+1. **Developer Churn** - Analyze team stability by examining developer tenure (first commit to last commit)
+2. **Vulnerability Statistics** - Compile aggregate statistics on vulnerabilities by developer (committed vs approved)
+
+**Note:** Individual vulnerability attribution (committed by / approved by for each specific vulnerability) is handled in the security audit templates, not here.
 
 ## Assessment Templates
 
-### 1. Security Responsibility
-- **[vulnerability-attribution.md](vulnerability-attribution.md)** - Attribute security vulnerabilities to developers using git blame
-
-### 2. Team Stability
+### 1. Team Stability
 - **[developer-churn.md](developer-churn.md)** - Calculate developer churn based on first and last commits
 
+### 2. Vulnerability Statistics  
+- **[vulnerability-statistics.md](vulnerability-statistics.md)** - Aggregate vulnerability statistics by developer (from security templates)
+
 ### 3. Executive Summary
-- **[executive-summary.md](executive-summary.md)** - Overall team health summary combining vulnerability attribution and churn analysis
+- **[executive-summary.md](executive-summary.md)** - Team health summary based on churn, with vulnerability statistics included
 
 ## Assessment Process
 
 ### Phase 1: Data Collection
 
-1. **Extract Security Findings**
-   - Read all security audit templates
-   - Extract vulnerabilities with file paths and line numbers
-   - Note severity levels and categories
-
-2. **Run Git Blame Analysis**
-   ```bash
-   # For each vulnerable code section
-   git blame -L [start_line],[end_line] [file_path] --line-porcelain
-   
-   # Get commit details
-   git show [commit_sha] --format="%H|%an|%ae|%ad|%s" --date=iso
-   ```
-
-3. **Analyze Developer Tenure**
+1. **Analyze Developer Tenure**
    ```bash
    # Get first and last commit for each developer
    git log --all --format="%an|%ae|%ad" --date=iso
@@ -64,10 +52,16 @@ This directory contains templates for conducting team assessments focused on sec
    - Identify knowledge risks (orphaned code)
    - Assess team stability
 
-3. **Maturity Scoring**
-   - Security Awareness Maturity (1-5 scale)
-   - Team Stability Maturity (1-5 scale)
-   - Overall Team Health Score (0-100)
+2. **Compile Vulnerability Statistics**
+   - Read all security audit templates
+   - Extract "Committed By" and "Approved By" fields from vulnerability tables
+   - Aggregate by developer (count committed vs approved)
+   - Calculate statistics by severity and category
+
+### Phase 2: Analysis and Scoring
+
+1. **Team Stability Maturity (1-5 scale)** - Based entirely on churn
+2. **Team Health Score (0-100)** - Calculated from Team Stability Maturity × 20
 
 ### Phase 3: Reporting
 
@@ -77,39 +71,38 @@ This directory contains templates for conducting team assessments focused on sec
 
 ## Scoring System
 
-All assessments use a consistent 1-5 scoring rubric:
+Team health is **entirely based on churn metrics**:
 
-| Score | Rating | Description |
-|-------|--------|-------------|
-| 5 | Exceptional | Minimal vulnerabilities; very low churn; excellent practices |
-| 4 | Strong | Few vulnerabilities; low churn; good practices |
-| 3 | Proficient | Moderate vulnerabilities; normal churn; room for improvement |
-| 2 | Developing | Many vulnerabilities; high churn; notable gaps |
-| 1 | Needs Attention | Critical vulnerabilities; very high churn; immediate action needed |
+| Score | Rating | Churn Description |
+|-------|--------|-------------------|
+| 5 | Exceptional | <5% annual churn; excellent knowledge transfer |
+| 4 | Strong | 5-10% annual churn; good documentation |
+| 3 | Proficient | 10-15% annual churn; adequate knowledge management |
+| 2 | Developing | 15-25% annual churn; knowledge gaps emerging |
+| 1 | Needs Attention | >25% annual churn; critical knowledge loss |
 
 ## Key Principles
 
 ### 🎯 Evidence-Based
-- Every assessment must cite specific commits, file paths, and line numbers
-- Include commit SHAs and dates for reference
+- Every assessment must cite specific commits and dates
+- Include commit SHAs for reference
 - Use quantitative metrics wherever possible
 
 ### 🤝 Constructive and Objective
-- Focus on learning and improvement, not blame
-- Consider context (code may have been secure when written)
-- Acknowledge git blame limitations
+- Focus on team stability and improvement
+- Consider context (project lifecycle, team size)
 - Provide actionable recommendations
 
 ### 📊 Data-Driven
 - Use git history as the source of truth
 - Exclude bot/automated commits
-- Calculate normalized metrics (per developer, per module)
+- Calculate normalized metrics
 - Track trends over time
 
 ### 🔒 Respectful and Private
 - Present findings constructively
 - Focus on patterns, not individual criticism
-- Individual attribution is for learning and improvement
+- Individual vulnerability attribution is in security templates
 - Share aggregate insights with leadership
 
 ## Attribution Best Practices

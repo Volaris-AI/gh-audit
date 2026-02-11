@@ -208,7 +208,7 @@ Excessive Permissions: [DROP, CREATE, ALTER, etc.]
 **Issues Found:**
 
 | Severity | Issue | Exposure | Impact |
-|----------|-------|----------|--------|
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Network Configuration:**
@@ -302,8 +302,8 @@ Enforce TLS: [Yes/No]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Authentication Methods:**
@@ -330,8 +330,8 @@ MFA: [Available/Not Available]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Pool Configuration:**
@@ -363,8 +363,8 @@ Validation: [Enabled/Disabled]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Backup Configuration:**
@@ -393,8 +393,8 @@ Last Successful: [Date]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Recovery Metrics:**
@@ -472,8 +472,8 @@ Test Result: [Success/Failure]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Audit Configuration:**
@@ -501,8 +501,8 @@ Log Location: [Path/Service]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Recommendations:**
@@ -555,8 +555,8 @@ Resource Limits: [Configured]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Recommendations:**
