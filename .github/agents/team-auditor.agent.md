@@ -52,11 +52,16 @@ Read all filled security audit templates from `audits/YYYY-MM-DD/security/*.md` 
 For each vulnerability with a file path and line number, use git blame:
 
 ```bash
-# Get the author of vulnerable code
-git blame -L [start_line],[end_line] [file_path] --line-porcelain
+# Get the author of vulnerable code (example)
+git blame -L 45,52 src/auth/authentication.js --line-porcelain
 
-# Extract commit info
-git show [commit_sha] --format="%H|%an|%ae|%ad|%s" --date=iso --no-patch
+# Extract commit info (replace [commit_sha] with actual SHA from blame output)
+git show abc1234567 --format="%H|%an|%ae|%ad|%s" --date=iso --no-patch
+```
+
+**Example output:**
+```
+abc1234567890|John Developer|john@example.com|2024-05-15 10:30:00 -0700|feat(auth): add JWT token validation
 ```
 
 **Step 3: Aggregate by Developer**
