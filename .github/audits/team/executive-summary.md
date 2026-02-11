@@ -16,373 +16,248 @@ severity-scale: "Critical|High|Medium|Low|Info"
 
 ## Assessment Overview
 **Team:** [TEAM_NAME]  
-**Assessment Period:** [START_DATE] to [END_DATE]  
+**Audit Date:** [AUDIT_DATE]  
 **Team Size:** [X] developers  
 **Assessment Completed:** [COMPLETION_DATE]  
-**Assessor:** [YOUR_NAME]  
-**Presented To:** [STAKEHOLDERS]
+**Assessor:** [YOUR_NAME]
 
 ---
 
 ## Executive Summary
 
-**Overall Team Health Score:** [X.X] / 5.0 ([Excellent/Strong/Healthy/Needs Improvement/Critical])
+**Overall Team Health Score:** [X] / 100
 
-**Assessment Verdict:** [One paragraph summary of team's current state and primary findings]
+**Assessment Focus:** This team assessment analyzes vulnerability attribution and developer churn to provide insights into security responsibility and team stability.
 
-**Strategic Recommendation:** [High-level recommendation for leadership - invest, maintain, restructure, etc.]
+**Key Findings:**
+- Total vulnerabilities attributed to developers: [NUMBER]
+- Average developer tenure: [X] months
+- Team churn rate (90-day): [X]%
+
+**Strategic Recommendation:** [High-level recommendation based on findings]
 
 ---
 
 ## Team Health Dashboard
 
-### Overall Scores
+### Assessment Scores
 
-| Assessment Area | Score | Trend | Industry Benchmark | Status |
-|----------------|-------|-------|-------------------|--------|
-| **Commit Quality** | [X.X] / 5 | [↑/→/↓] | [Industry avg] | [🟢/🟡/🔴] |
-| **Code Documentation** | [X.X] / 5 | [↑/→/↓] | [Industry avg] | [🟢/🟡/🔴] |
-| **Work Quality** | [X.X] / 5 | [↑/→/↓] | [Industry avg] | [🟢/🟡/🔴] |
-| **Team Collaboration** | [X.X] / 5 | [↑/→/↓] | [Industry avg] | [🟢/🟡/🔴] |
-| **Velocity/Productivity** | [X.X] / 5 | [↑/→/↓] | [Industry avg] | [🟢/🟡/🔴] |
-| **Technical Leadership** | [X.X] / 5 | [↑/→/↓] | [Industry avg] | [🟢/🟡/🔴] |
-| **Overall Average** | **[X.X] / 5** | **[↑/→/↓]** | **[Industry avg]** | **[🟢/🟡/🔴]** |
+| Assessment Area | Score/Metric | Status |
+|----------------|--------------|--------|
+| **Vulnerability Attribution** | [X] vulns attributed | [🟢/🟡/🔴] |
+| **Developer Churn Rate** | [X]% (90-day) | [🟢/🟡/🔴] |
+| **Average Tenure** | [X] months | [🟢/🟡/🔴] |
+| **Overall Team Health** | **[X] / 100** | **[🟢/🟡/🔴]** |
 
 **Status Legend:**
-- 🟢 **Healthy** (4.0-5.0): Exceeds expectations
-- 🟡 **Adequate** (3.0-3.9): Meets expectations with room for improvement
-- 🔴 **Needs Attention** (<3.0): Below expectations, requires immediate action
+- 🟢 **Healthy** (Score: 65+): Good security practices and stable team
+- 🟡 **Adequate** (Score: 42-64): Room for improvement
+- 🔴 **Needs Attention** (Score: <42): Requires immediate action
 
-### DORA Metrics Performance
-
-| Metric | Current | DORA Level | Target | Status |
-|--------|---------|------------|--------|--------|
-| **Deployment Frequency** | [X]/week | [Elite/High/Med/Low] | [Target] | [🟢/🟡/🔴] |
-| **Lead Time for Changes** | [X] days | [Elite/High/Med/Low] | [Target] | [🟢/🟡/🔴] |
-| **Change Failure Rate** | [X]% | [Elite/High/Med/Low] | <15% | [🟢/🟡/🔴] |
-| **Mean Time to Recovery** | [X] hours | [Elite/High/Med/Low] | <1 day | [🟢/🟡/🔴] |
-
-**Overall DORA Performance Level:** [Elite/High/Medium/Low]
+**Scoring Methodology:**
+The team health score is based on:
+- Average maturity rating (1-5) across team dimensions
+- Bonus points for low vulnerability attribution rates
+- Penalty for high churn rates or short tenure
 
 ---
 
-## Key Findings
+## Vulnerability Attribution Summary
 
-### 🎯 Strengths (Maintain and Leverage)
+### Total Vulnerabilities Analyzed
 
-#### 1. [PRIMARY STRENGTH]
-**Description:** [What the team does exceptionally well]
+| Severity | Count | Attributed | Not Attributed | % Attributed |
+|----------|-------|------------|----------------|--------------|
+| Critical | [X] | [X] | [X] | [X]% |
+| High | [X] | [X] | [X] | [X]% |
+| Medium | [X] | [X] | [X] | [X]% |
+| Low | [X] | [X] | [X] | [X]% |
+| **Total** | **[X]** | **[X]** | **[X]** | **[X]%** |
+
+### Vulnerability Distribution by Developer
+
+| Developer | Critical | High | Medium | Low | Total | % of Team's Vulns |
+|-----------|----------|------|--------|-----|-------|-------------------|
+| [Developer 1] | [X] | [X] | [X] | [X] | [X] | [X]% |
+| [Developer 2] | [X] | [X] | [X] | [X] | [X] | [X]% |
+| [Developer 3] | [X] | [X] | [X] | [X] | [X] | [X]% |
+| [Developer 4] | [X] | [X] | [X] | [X] | [X] | [X]% |
+| [Developer 5] | [X] | [X] | [X] | [X] | [X] | [X]% |
+
+### Key Patterns
+
+**Most Common Vulnerability Types:**
+1. [Vulnerability Category]: [X] occurrences
+2. [Vulnerability Category]: [X] occurrences
+3. [Vulnerability Category]: [X] occurrences
+
+**High-Risk Code Areas:**
+1. [Module/Directory]: [X] vulnerabilities
+2. [Module/Directory]: [X] vulnerabilities
+3. [Module/Directory]: [X] vulnerabilities
+
+---
+
+## Developer Churn Summary
+
+### Team Composition
+
+| Category | Count | Percentage |
+|----------|-------|------------|
+| **Active Developers** (last 30 days) | [X] | [X]% |
+| **Inactive Developers** (30-90 days) | [X] | [X]% |
+| **Departed Developers** (90+ days) | [X] | [X]% |
+| **Total Developers (All Time)** | **[X]** | **100%** |
+
+### Churn Metrics
+
+| Metric | Value | Industry Benchmark | Status |
+|--------|-------|-------------------|--------|
+| **30-Day Churn Rate** | [X]% | <2% | [🟢/🟡/🔴] |
+| **90-Day Churn Rate** | [X]% | <5% | [🟢/🟡/🔴] |
+| **12-Month Churn Rate** | [X]% | 10-15% | [🟢/🟡/🔴] |
+| **Average Tenure (Active)** | [X] months | 18-24 months | [🟢/🟡/🔴] |
+| **Average Tenure (Departed)** | [X] months | N/A | N/A |
+
+### Tenure Distribution
+
+```
+<3 months  : ████░░░░░░░░░░░░░░░░ [X] developers ([X]%)
+3-6 months : ██████░░░░░░░░░░░░░░ [X] developers ([X]%)
+6-12 months: ████████░░░░░░░░░░░░ [X] developers ([X]%)
+1-2 years  : ██████████░░░░░░░░░░ [X] developers ([X]%)
+2+ years   : ████████████████████ [X] developers ([X]%)
+```
+
+### Knowledge Risk Assessment
+
+**High-Risk Areas (Code owned by departed/inactive developers):**
+1. [Module/Directory]: [X]% ownership by departed developers
+2. [Module/Directory]: [X]% ownership by departed developers
+3. [Module/Directory]: [X]% ownership by departed developers
+
+---
+
+## Key Findings and Recommendations
+
+### 🎯 Positive Findings
+
+#### 1. [POSITIVE FINDING]
+**Description:** [What's working well]
 
 **Evidence:**
-- [Quantitative metric]
-- [Specific examples]
+- [Specific data/examples]
 
 **Impact:**
-- [How this benefits the organization]
-- [Competitive advantage provided]
+- [Why this is good for the team]
 
-**Recommendation:** [How to leverage or spread this strength]
+**Recommendation:** [How to maintain or leverage this]
 
 ---
 
-#### 2. [SECONDARY STRENGTH]
-**Description:** [What the team does well]
+### ⚠️ Areas Requiring Attention
 
-**Evidence:**
-- [Metrics and examples]
-
-**Impact:**
-- [Benefits]
-
-**Recommendation:** [How to leverage]
-
----
-
-### ⚠️ Areas Requiring Attention (Prioritized)
-
-#### 🔴 Critical: [CRITICAL ISSUE #1]
-**Description:** [What's wrong and why it's critical]
+#### 🔴 High Priority: [ISSUE]
+**Description:** [What's wrong and why it's high priority]
 
 **Evidence:**
 - [Quantitative data]
 - [Specific examples]
-- [Trend data showing it's getting worse]
 
 **Impact:**
-- **Business Impact:** [Effect on delivery, quality, customer satisfaction]
-- **Team Impact:** [Effect on morale, retention, productivity]
-- **Risk:** [What happens if not addressed]
-
-**Root Causes:**
-- [Primary cause]
-- [Secondary cause]
+- **Security Impact:** [Effect on security posture]
+- **Team Impact:** [Effect on team stability/morale]
 
 **Recommended Actions:**
-- [ ] [Immediate action - What to do now]
-- [ ] [Short-term action - Within 30 days]
-- [ ] [Long-term solution - Within 90 days]
-
-**Investment Required:**
-- Time: [Estimate]
-- Resources: [What's needed]
-- Budget: [If applicable]
-
-**Expected Outcome:**
-- [Measurable improvement expected]
-- [Timeline to improvement]
+- [ ] [Immediate action]
+- [ ] [Short-term action - 30 days]
+- [ ] [Long-term solution - 90 days]
 
 **Owner:** [Who should drive this]
 
 ---
 
-#### 🟡 Important: [IMPORTANT ISSUE #1]
+#### 🟡 Medium Priority: [ISSUE]
 **Description:** [What needs improvement]
 
 **Evidence:**
 - [Data and examples]
 
-**Impact:**
-- [Why this matters]
-
 **Recommended Actions:**
 - [ ] [Action]
 - [ ] [Action]
-
-**Investment Required:**
-- [Summary]
 
 **Owner:** [Who should drive this]
 
 ---
 
-### 📈 Opportunities for Growth
+## Actionable Recommendations
 
-#### 1. [OPPORTUNITY]
-**Description:** [What the team could improve or capitalize on]
+### For Security Improvement
 
-**Potential Impact:**
-- [Benefits if pursued]
+1. **Developer-Specific Security Training**
+   - Focus on: [Top vulnerability categories by developer]
+   - Recommended approach: [Training, workshops, pair programming]
+   - Timeline: [When to complete]
 
-**Recommended Actions:**
-- [How to capture this opportunity]
+2. **Code Review Enhancement**
+   - Add security checklist items for: [Common vulnerability patterns]
+   - Assign security-focused reviewers for: [High-risk areas]
+   - Implement automated checks for: [Specific vulnerabilities]
 
-**Investment Required:**
-- [What's needed]
+3. **Architectural Improvements**
+   - Refactor high-risk modules: [Specific modules]
+   - Centralize security-critical code: [What to centralize]
+   - Add security boundaries: [Where needed]
 
----
+### For Team Stability
 
-## Team Composition Analysis
+1. **Knowledge Management**
+   - Document critical systems owned by departed developers
+   - Establish code ownership with at least 2 developers per area
+   - Create knowledge sharing sessions
 
-### Performance Distribution
-```
-Exceptional (4.5-5.0):    ⬜⬜ ([X] developers - [X]%)
-Strong (4.0-4.4):         ⬜⬜⬜⬜ ([X] developers - [X]%)
-Proficient (3.0-3.9):     ⬜⬜⬜ ([X] developers - [X]%)
-Developing (2.0-2.9):     ⬜ ([X] developer - [X]%)
-Needs Attention (<2.0):   ⬜ ([X] developer - [X]%)
-```
+2. **Retention Strategies**
+   - Focus on new developers (<6 months tenure)
+   - Provide growth opportunities for mid-tenure developers
+   - Engage senior developers with leadership opportunities
 
-**Assessment:**
-- [X]% of team is performing at or above expectations
-- [X]% of team needs development support
-- [Summary of distribution health]
-
-### Team Balance
-
-| Role/Level | Count | Ideal | Assessment |
-|------------|-------|-------|------------|
-| Staff/Principal Engineer | [X] | [Y] | [Adequate/Shortage/Excess] |
-| Senior Engineers | [X] | [Y] | [Adequate/Shortage/Excess] |
-| Mid-Level Engineers | [X] | [Y] | [Adequate/Shortage/Excess] |
-| Junior Engineers | [X] | [Y] | [Adequate/Shortage/Excess] |
-
-**Balance Assessment:**
-- [Are there enough senior engineers to mentor juniors?]
-- [Is the team top-heavy or bottom-heavy?]
-- [Are there succession planning concerns?]
+3. **Succession Planning**
+   - Cross-train developers on critical systems
+   - Identify and address single points of failure
+   - Create career development paths
 
 ---
 
-## Top Performers and Mentors
+## Maturity Assessment
 
-### Top 3 Performers
+### Security Awareness Maturity
 
-#### 1. [DEVELOPER NAME] - Overall Score: [X.X]/5.0
-**Why Top Performer:**
-- [Key strength and contribution]
-- [Impact on team/product]
-- [Leadership demonstrated]
+**Score:** [X] / 5
 
-**Recognition Recommended:**
-- [ ] Public recognition in [forum]
-- [ ] Bonus/reward
-- [ ] Promotion consideration to [level]
-- [ ] Assign as technical lead for [project]
-- [ ] Conference speaking opportunity
+| Level | Description | Assessment |
+|-------|-------------|------------|
+| 5 - Exceptional | Proactive security culture; minimal vulnerabilities | [ ] |
+| 4 - Strong | Good security practices; few critical issues | [ ] |
+| 3 - Proficient | Basic security awareness; room for improvement | [ ] |
+| 2 - Developing | Inconsistent security practices; notable gaps | [ ] |
+| 1 - Needs Attention | Significant security issues requiring immediate action | [ ] |
 
-**Retention Risk:** [Low/Medium/High]
-**Retention Actions:** [What to do to retain this person]
+**Justification:** [Why this score was assigned]
 
----
+### Team Stability Maturity
 
-#### 2. [DEVELOPER NAME] - Overall Score: [X.X]/5.0
-**Why Top Performer:**
-- [Key contributions]
+**Score:** [X] / 5
 
-**Recognition Recommended:**
-- [ ] [Actions]
+| Level | Description | Assessment |
+|-------|-------------|------------|
+| 5 - Exceptional | Very low churn; excellent knowledge transfer | [ ] |
+| 4 - Strong | Low churn; good documentation and ownership | [ ] |
+| 3 - Proficient | Normal churn; adequate knowledge management | [ ] |
+| 2 - Developing | High churn; knowledge gaps emerging | [ ] |
+| 1 - Needs Attention | Very high churn; critical knowledge loss | [ ] |
 
-**Retention Risk:** [Low/Medium/High]
-
----
-
-#### 3. [DEVELOPER NAME] - Overall Score: [X.X]/5.0
-**Why Top Performer:**
-- [Key contributions]
-
-**Recognition Recommended:**
-- [ ] [Actions]
-
-**Retention Risk:** [Low/Medium/High]
-
----
-
-### Top Mentors and Teachers
-
-#### 1. [DEVELOPER NAME]
-**Mentoring Contributions:**
-- Mentors: [X] developers
-- Tech talks: [X]
-- Documentation: [X] contributions
-- Code review quality: [High/Medium/Low]
-
-**Impact:**
-- [How their mentoring helps team]
-
-**Recognition:**
-- [ ] "Mentor of the Quarter" award
-- [ ] Additional mentoring responsibilities
-- [ ] Opportunity to lead training program
-
----
-
-### Rising Stars (High Potential)
-
-#### 1. [DEVELOPER NAME]
-**Why High Potential:**
-- [Growth trajectory]
-- [Skills and impact]
-
-**Investment Recommendation:**
-- [Training, stretch assignments, mentoring]
-
-**Expected Outcome:**
-- [What they could become with investment]
-
----
-
-## Team Capabilities and Gaps
-
-### Technical Capabilities
-
-| Capability Area | Current Level | Required Level | Gap | Action |
-|----------------|---------------|----------------|-----|--------|
-| [Technology/Skill] | [1-5] | [1-5] | [Gap size] | [Action needed] |
-| [Technology/Skill] | [1-5] | [1-5] | [Gap size] | [Action needed] |
-| [Technology/Skill] | [1-5] | [1-5] | [Gap size] | [Action needed] |
-
-### Knowledge Silos (Risk Areas)
-
-**Critical Knowledge Concentrated in Few People:**
-
-1. **[Technology/System]**
-   - Experts: [Name(s)]
-   - Risk Level: [High/Medium/Low]
-   - Bus Factor: [X] (only [X] person(s) understand this)
-   - Mitigation: [Action to spread knowledge]
-
-2. **[Technology/System]**
-   - [Similar structure]
-
----
-
-## Coaching and Development Plan Summary
-
-### Team-Wide Initiatives (Investment Required)
-
-#### 1. [INITIATIVE NAME]
-**Goal:** [What this aims to achieve]
-
-**Target Metrics:**
-- [Metric]: Improve from [X] to [Y]
-- [Metric]: Improve from [X] to [Y]
-
-**Investment Required:**
-- **Time:** [X] weeks of focused effort
-- **Budget:** $[X] for [training/tools/resources]
-- **Resources:** [What's needed]
-
-**Expected ROI:**
-- [Quantified benefit]
-- [Qualitative benefit]
-
-**Timeline:** [Start date] to [Completion date]
-
-**Owner:** [Who leads this]
-
----
-
-#### 2. [INITIATIVE NAME]
-[Similar structure]
-
----
-
-### Individual Development Plans
-
-**Total Developers with Active Coaching Plans:** [X] / [TEAM_SIZE] ([X]%)
-
-**By Priority:**
-- 🔴 **High Priority (Needs Immediate Attention):** [X] developers
-- 🟡 **Medium Priority (Focused Development):** [X] developers
-- 🟢 **Low Priority (Continuous Growth):** [X] developers
-
-**Investment Summary:**
-- **Total Coaching Hours:** [X] hours/month
-- **Training Budget Needed:** $[X]
-- **Mentoring Hours:** [X] hours/month
-
-**Expected Outcomes:**
-- [X] developers ready for promotion in [timeframe]
-- [X] developers meeting expectations in [timeframe]
-- [X] developers acquiring critical skills in [timeframe]
-
----
-
-## Productivity and Velocity Analysis
-
-### Current State
-- **Average Velocity:** [X] story points/sprint (or relevant metric)
-- **Deployment Frequency:** [X] per [week/month]
-- **Lead Time:** [X] days
-- **Bug Ratio:** [X] fixed : [Y] introduced
-
-### Bottlenecks Identified
-1. **[Bottleneck]** - Adds [X] days to lead time
-2. **[Bottleneck]** - Causes [X]% of delays
-3. **[Bottleneck]** - Affects [X]% of PRs
-
-### Improvement Potential
-
-**If Recommended Actions Taken:**
-- Velocity could increase by [X]%
-- Lead time could reduce by [X]%
-- Deployment frequency could increase by [X]%
-- Bug introduction could reduce by [X]%
-
-**Timeline to Improvements:**
-- 30 days: [Expected improvement]
-- 60 days: [Expected improvement]
-- 90 days: [Expected improvement]
+**Justification:** [Why this score was assigned]
 
 ---
 
@@ -397,20 +272,11 @@ Needs Attention (<2.0):   ⬜ ([X] developer - [X]%)
 **Impact:** [High/Medium/Low]  
 **Overall Risk:** [Critical/High/Medium/Low]
 
-**Indicators:**
-- [Warning sign]
-- [Warning sign]
-
 **Mitigation:**
 - [Action to reduce risk]
 - [Action to reduce risk]
 
 **Owner:** [Who owns this risk]
-
----
-
-#### 2. [RISK NAME]
-[Similar structure]
 
 ---
 
@@ -423,196 +289,62 @@ Needs Attention (<2.0):   ⬜ ([X] developer - [X]%)
 
 ---
 
-## Investment Recommendations
+## Follow-Up Actions
 
-### Priority 1: Critical Investments (Immediate)
+### Immediate (0-7 days)
+- [ ] [Action with owner and deadline]
+- [ ] [Action with owner and deadline]
 
-#### Investment: [NAME]
-**Problem Addressed:** [What this solves]
+### Short-Term (1-4 weeks)
+- [ ] [Action with owner and deadline]
+- [ ] [Action with owner and deadline]
 
-**Investment Required:**
-- **Financial:** $[X] for [what]
-- **Time:** [X] weeks of team time
-- **Resources:** [What's needed]
-
-**Expected ROI:**
-- [Quantified benefit]
-- [Payback period]
-
-**Risk of Not Investing:**
-- [What happens if we don't do this]
-
-**Recommendation:** ✅ **Approve immediately**
+### Long-Term (1-3 months)
+- [ ] [Action with owner and deadline]
+- [ ] [Action with owner and deadline]
 
 ---
 
-### Priority 2: Important Investments (30-60 days)
-
-#### Investment: [NAME]
-**Problem Addressed:** [What this solves]
-
-**Investment Required:**
-- [Summary]
-
-**Expected ROI:**
-- [Benefits]
-
-**Recommendation:** ✅ **Approve for next quarter**
-
----
-
-### Priority 3: Nice-to-Have Investments (60-90 days)
-
-#### Investment: [NAME]
-[Summary]
-
-**Recommendation:** ⏸️ **Defer or deprioritize**
-
----
-
-## Comparison to Previous Assessment
-
-**Previous Assessment Date:** [DATE]  
-**Change Period:** [X] months
-
-### Score Changes
-
-| Assessment Area | Previous | Current | Change | Trend |
-|----------------|----------|---------|--------|-------|
-| Commit Quality | [X.X] | [X.X] | [+/-X.X] | [↑/→/↓] |
-| Code Documentation | [X.X] | [X.X] | [+/-X.X] | [↑/→/↓] |
-| Work Quality | [X.X] | [X.X] | [+/-X.X] | [↑/→/↓] |
-| Team Collaboration | [X.X] | [X.X] | [+/-X.X] | [↑/→/↓] |
-| Velocity | [X.X] | [X.X] | [+/-X.X] | [↑/→/↓] |
-| Technical Leadership | [X.X] | [X.X] | [+/-X.X] | [↑/→/↓] |
-| **Overall** | **[X.X]** | **[X.X]** | **[+/-X.X]** | **[↑/→/↓]** |
-
-### Key Improvements
-1. **[Area]** improved by [X]%
-   - Action taken: [What we did]
-   - Result: [What improved]
-
-2. **[Area]** improved by [X]%
-   - [Similar structure]
-
-### Areas Still Needing Work
-1. **[Area]** declined by [X]% or flat
-   - Reason: [Why no improvement]
-   - New approach: [What to try differently]
-
----
-
-## Recommendations for Leadership
-
-### Immediate Actions (This Week)
-
-1. **[ACTION]**
-   - Why: [Reason]
-   - Who: [Owner]
-   - By When: [Date]
-
-2. **[ACTION]**
-   - [Similar structure]
-
-### Short-Term Actions (This Month)
-
-1. **[ACTION]**
-   - Why: [Reason]
-   - Investment: [What's needed]
-   - Expected Outcome: [Result]
-
-2. **[ACTION]**
-   - [Similar structure]
-
-### Long-Term Strategic Actions (This Quarter)
-
-1. **[ACTION]**
-   - Why: [Reason]
-   - Investment: [What's needed]
-   - Expected Outcome: [Result]
-
-2. **[ACTION]**
-   - [Similar structure]
-
----
-
-## Success Metrics and Follow-Up
+## Success Metrics
 
 ### Key Metrics to Track
 
-**Leading Indicators (Behaviors):**
+**Vulnerability Metrics:**
 | Metric | Current | Target | Review Frequency |
 |--------|---------|--------|------------------|
-| [Metric] | [X] | [Y] | [Weekly/Monthly] |
-| [Metric] | [X] | [Y] | [Weekly/Monthly] |
+| Critical vulnerabilities per developer | [X] | [Y] | Monthly |
+| High vulnerabilities per developer | [X] | [Y] | Monthly |
+| Vulnerability remediation time | [X] days | [Y] days | Monthly |
 
-**Lagging Indicators (Outcomes):**
+**Churn Metrics:**
 | Metric | Current | Target | Review Frequency |
 |--------|---------|--------|------------------|
-| [Metric] | [X] | [Y] | [Monthly/Quarterly] |
-| [Metric] | [X] | [Y] | [Monthly/Quarterly] |
+| 90-day churn rate | [X]% | <5% | Monthly |
+| Average tenure | [X] months | 24+ months | Quarterly |
+| Knowledge transfer completion | [X]% | 100% | Per departure |
 
 ### Follow-Up Schedule
 
 **30-Day Check-In** ([DATE])
 - Review progress on immediate actions
-- Check coaching plan execution
-- Measure early improvements
-- Adjust plans as needed
+- Check vulnerability remediation progress
+- Monitor team changes
 
 **60-Day Check-In** ([DATE])
-- Measure improvement in key metrics
-- Assess effectiveness of initiatives
-- Review individual development progress
-- Course correct if needed
+- Measure improvement in security practices
+- Assess knowledge transfer effectiveness
+- Review churn trends
 
 **90-Day Re-Assessment** ([DATE])
 - Complete full team assessment
-- Compare scores to baseline
-- Evaluate ROI of investments
+- Compare metrics to baseline
 - Plan next quarter's initiatives
-
----
-
-## Budget Summary
-
-### Training and Development
-| Item | Cost | Benefit |
-|------|------|---------|
-| [Course/Training] | $[X] | [Benefit] |
-| [Course/Training] | $[X] | [Benefit] |
-| [Course/Training] | $[X] | [Benefit] |
-| **Subtotal** | **$[X]** | |
-
-### Tools and Resources
-| Item | Cost | Benefit |
-|------|------|---------|
-| [Tool/Resource] | $[X] | [Benefit] |
-| [Tool/Resource] | $[X] | [Benefit] |
-| **Subtotal** | **$[X]** | |
-
-### Hiring/Staffing
-| Item | Cost | Benefit |
-|------|------|---------|
-| [Position] | $[X] | [Benefit] |
-| [Position] | $[X] | [Benefit] |
-| **Subtotal** | **$[X]** | |
-
-### **Total Investment Required:** $[X]
-
-### **Expected Annual ROI:**
-- Productivity gain: [X]% = $[Y] value
-- Quality improvement: Reduce bugs by [X]% = $[Y] value
-- Retention: Avoid [X] replacements = $[Y] value
-- **Total Expected Value:** $[Y]
-- **Net ROI:** [X]% ([Y/X ratio])
-- **Payback Period:** [X] months
 
 ---
 
 ## Conclusion
 
-**Overall Assessment:** [One paragraph summary]
+**Overall Assessment:** [One paragraph summary of team health regarding security responsibility and stability]
 
 **Primary Recommendation:** [Clear recommendation for leadership]
 
@@ -622,32 +354,21 @@ Needs Attention (<2.0):   ⬜ ([X] developer - [X]%)
 3. [Third step]
 
 **Long-Term Outlook:**
-- With recommended investments: [Positive outlook]
-- Without investments: [Risk outlook]
+- With recommended actions: [Positive outlook]
+- Without actions: [Risk outlook]
 
 ---
 
 ## Appendix
 
 ### Detailed Assessment Reports
-- [Link to commit-quality.md]
-- [Link to code-documentation.md]
-- [Link to work-quality.md]
-- [Link to team-collaboration.md]
-- [Link to velocity-metrics.md]
-- [Link to developer-contributions.md]
-- [Link to technical-leadership.md]
+- [vulnerability-attribution.md](vulnerability-attribution.md) — Detailed attribution of security vulnerabilities to team members
+- [developer-churn.md](developer-churn.md) — Detailed analysis of developer tenure and churn patterns
 
-### Individual Coaching Plans
-- [Link to developer-1-coaching.md]
-- [Link to developer-2-coaching.md]
-- [List continues...]
-
-### Raw Data and Evidence
-- [Link to data directory]
-- [Link to commits.csv]
-- [Link to prs.json]
-- [Link to metrics spreadsheet]
+### Raw Data
+- Git blame analysis results
+- Commit history extracts
+- Security vulnerability mappings
 
 ---
 
@@ -657,8 +378,5 @@ Needs Attention (<2.0):   ⬜ ([X] developer - [X]%)
 
 **Reviewed By:** [ENGINEERING MANAGER] _________________________ Date: ___________
 
-**Approved By:** [DIRECTOR/VP] _________________________ Date: ___________
-
-**Presented To:** [STAKEHOLDERS] Date: ___________
-
 **Next Assessment Due:** [DATE]
+
