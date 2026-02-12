@@ -14,349 +14,215 @@ severity-scale: "Critical|High|Medium|Low|Info"
 
 <!-- analysis: git-history -->
 
-## Assessment Overview
-**Team:** [TEAM_NAME]  
-**Audit Date:** [AUDIT_DATE]  
-**Analysis Scope:** All vulnerabilities from security audit + full git history  
-**Team Size:** [X] developers (Active: [X], Inactive: [X], Departed: [X])  
-**Assessment Completed:** [COMPLETION_DATE]  
-**Assessor:** [YOUR_NAME]
+> **Generated:** [COMPLETION_DATE]  
+> **Assessment Period:** [timeframe, e.g., "Last 90 days"]
 
 ---
 
-## Executive Summary
+## 📊 Team Health Score
 
-**Overall Team Health Score:** [X] / 100
+**Score: XX / 100** — [Excellent | Good | Fair | Poor | Critical]
 
-**Assessment Focus:** This team assessment analyzes vulnerability attribution and developer churn to provide insights into security responsibility and team stability.
+### At a Glance
 
-**Key Findings:**
-- Total vulnerabilities attributed to developers: [NUMBER]
-- Average developer tenure: [X] months
-- Team churn rate (90-day): [X]%
+| Metric | Value | Status |
+|--------|-------|--------|
+| Team Size | XX developers | — |
+| Active Developers | XX | 🟢 |
+| 90-Day Churn Rate | XX% | [🟢 Low / 🟡 Moderate / 🔴 High] |
+| Average Tenure | XX months | [🟢 Strong / 🟡 Adequate / 🔴 Weak] |
+| Team Stability Maturity | X.X / 5 | [🟢 Strong / 🟡 Developing / 🔴 Weak] |
+| Total Vulnerabilities | XX | [from security audit] |
 
-**Strategic Recommendation:** [High-level recommendation based on findings]
+### Key Takeaways
 
----
+1. **[Most significant positive finding about team stability]**
+2. **[Key concern about churn or knowledge concentration]**
+3. **[Key recommendation for improvement]**
 
-## Team Health Dashboard
+### Top 3 Priorities
 
-### Assessment Scores
-
-| Assessment Area | Score/Metric | Status |
-|----------------|--------------|--------|
-| **Developer Churn Rate** | [X]% (90-day) | [🟢/🟡/🔴] |
-| **Average Tenure** | [X] months | [🟢/🟡/🔴] |
-| **Team Stability Maturity** | [X] / 5 | [🟢/🟡/🔴] |
-| **Overall Team Health** | **[X] / 100** | **[🟢/🟡/🔴]** |
-
-**Status Legend:**
-- 🟢 **Healthy** (Score: 65+): Stable team with low churn
-- 🟡 **Adequate** (Score: 42-64): Room for improvement
-- 🔴 **Needs Attention** (Score: <42): Requires immediate action
-
-**Scoring Methodology:**
-The team health score is **entirely based on churn metrics**:
-- Base score = Team Stability Maturity (1-5) × 20
-- Bonus: +5 if average tenure >24 months
-- Penalty: -10 if >3 developers departed in last 90 days
-- Penalty: -5 if critical systems owned by single departed developer
+1. 🔴 **[Critical Priority]** — [e.g., Address knowledge concentration in departed developer's code]
+2. 🟡 **[High Priority]** — [e.g., Implement knowledge sharing sessions]
+3. 🟢 **[Medium Priority]** — [e.g., Document critical systems]
 
 ---
 
-## Vulnerability Statistics Summary
+## 🎯 Scoring Breakdown
 
-**Note:** Detailed vulnerability attribution (committed by / approved by for each vulnerability) is included in individual security audit templates. This section provides aggregate statistics only.
+**Score: XX / 100** — Level X — [Excellent | Good | Fair | Poor | Critical]
 
-### Total Vulnerabilities from Security Audit
+### Scoring Rubric
 
-| Severity | Count | % of Total |
-|----------|-------|------------|
-| Critical | [X] | [X]% |
-| High | [X] | [X]% |
-| Medium | [X] | [X]% |
-| Low | [X] | [X]% |
-| **Total** | **[X]** | **100%** |
+| Level | Score | Your Status | Criteria |
+|-------|-------|-------------|----------|
+| **5 — Excellent** | 95 | [✅ / ❌] | Maturity ≥4.5, <5% annual churn, avg tenure >24 months |
+| **4 — Good** | 82 | [✅ / ❌] | Maturity ≥3.8, 5-10% annual churn, avg tenure >18 months |
+| **3 — Fair** | 65 | [✅ / ❌] | Maturity ≥2.8, 10-15% annual churn, avg tenure >12 months |
+| **2 — Poor** | 42 | [✅ / ❌] | Maturity ≥2.0, 15-25% annual churn, avg tenure >6 months |
+| **1 — Critical** | 15 | [✅ / ❌] | Maturity <2.0, >25% annual churn |
 
-### Developer Involvement in Vulnerabilities
+### Your Metrics
 
-| Developer | Committed | Approved | Total Involvement |
-|-----------|-----------|----------|-------------------|
-| [Developer 1] | [X] | [X] | [X] |
-| [Developer 2] | [X] | [X] | [X] |
-| [Developer 3] | [X] | [X] | [X] |
-| [Developer 4] | [X] | [X] | [X] |
-| [Developer 5] | [X] | [X] | [X] |
+| Metric | Value | Industry Benchmark | Status |
+|--------|-------|-------------------|--------|
+| Team Stability Maturity | X.X / 5 | ≥3.0 | [🟢 / 🟡 / 🔴] |
+| 90-Day Churn Rate | XX% | <5% | [🟢 / 🟡 / 🔴] |
+| 12-Month Churn Rate | XX% | 10-15% | [🟢 / 🟡 / 🔴] |
+| Average Tenure (Active) | XX months | >18 months | [🟢 / 🟡 / 🔴] |
+| Active Developers | XX | — | [🟢 / 🟡 / 🔴] |
+| Departed (90+ days) | XX | Low | [🟢 / 🟡 / 🔴] |
 
-**For detailed breakdown by severity and category, see [vulnerability-statistics.md](vulnerability-statistics.md)**
+**Modifiers Applied:**
+- Tenure bonus: +X points (if avg tenure >24 months)
+- Recent departures penalty: -X points (if >3 departed in last 90 days)
+- Knowledge risk penalty: -X points (if critical systems owned by single departed developer)
+- **Final Score:** XX/100
 
----
-
-## Developer Churn Summary
+<details>
+<summary><b>📋 Developer Churn Details</b> (click to expand)</summary>
 
 ### Team Composition
 
 | Category | Count | Percentage |
 |----------|-------|------------|
-| **Active Developers** (last 30 days) | [X] | [X]% |
-| **Inactive Developers** (30-90 days) | [X] | [X]% |
-| **Departed Developers** (90+ days) | [X] | [X]% |
-| **Total Developers (All Time)** | **[X]** | **100%** |
+| **Active Developers** (last 30 days) | XX | XX% |
+| **Inactive Developers** (30-90 days) | XX | XX% |
+| **Departed Developers** (90+ days) | XX | XX% |
+| **Total Developers (All Time)** | **XX** | **100%** |
 
-### Churn Metrics
+### Developer Tenure
 
-| Metric | Value | Industry Benchmark | Status |
-|--------|-------|-------------------|--------|
-| **30-Day Churn Rate** | [X]% | <2% | [🟢/🟡/🔴] |
-| **90-Day Churn Rate** | [X]% | <5% | [🟢/🟡/🔴] |
-| **12-Month Churn Rate** | [X]% | 10-15% | [🟢/🟡/🔴] |
-| **Average Tenure (Active)** | [X] months | 18-24 months | [🟢/🟡/🔴] |
-| **Average Tenure (Departed)** | [X] months | N/A | N/A |
+| Developer | First Commit | Last Commit | Tenure (months) | Status |
+|-----------|--------------|-------------|-----------------|--------|
+| [Developer 1] | [YYYY-MM-DD] | [YYYY-MM-DD] | XX | Active |
+| [Developer 2] | [YYYY-MM-DD] | [YYYY-MM-DD] | XX | Active |
+| [Developer 3] | [YYYY-MM-DD] | [YYYY-MM-DD] | XX | Inactive |
+| [Developer 4] | [YYYY-MM-DD] | [YYYY-MM-DD] | XX | Departed |
 
 ### Tenure Distribution
 
 ```
-<3 months  : ████░░░░░░░░░░░░░░░░ [X] developers ([X]%)
-3-6 months : ██████░░░░░░░░░░░░░░ [X] developers ([X]%)
-6-12 months: ████████░░░░░░░░░░░░ [X] developers ([X]%)
-1-2 years  : ██████████░░░░░░░░░░ [X] developers ([X]%)
-2+ years   : ████████████████████ [X] developers ([X]%)
+<3 months  : ████░░░░░░░░░░░░░░░░ XX developers (XX%)
+3-6 months : ██████░░░░░░░░░░░░░░ XX developers (XX%)
+6-12 months: ████████░░░░░░░░░░░░ XX developers (XX%)
+1-2 years  : ██████████░░░░░░░░░░ XX developers (XX%)
+2+ years   : ████████████████████ XX developers (XX%)
 ```
 
-### Knowledge Risk Assessment
+**Team Strengths:**
+- [Positive pattern, e.g., "Long average tenure indicates stable team"]
+- [Positive pattern, e.g., "Low recent departure rate"]
 
-**High-Risk Areas (Code owned by departed/inactive developers):**
-1. [Module/Directory]: [X]% ownership by departed developers
-2. [Module/Directory]: [X]% ownership by departed developers
-3. [Module/Directory]: [X]% ownership by departed developers
+**Areas for Concern:**
+- [Concern, e.g., "3 developers departed in last 90 days"]
+- [Concern, e.g., "Knowledge concentration in authentication module"]
 
----
+**Knowledge Risk Assessment:**
 
-## Key Findings and Recommendations
+High-risk areas (code owned by departed/inactive developers):
+1. [Module/Directory]: XX% ownership by departed developers
+2. [Module/Directory]: XX% ownership by departed developers
 
-### 🎯 Positive Findings
+[See detailed churn analysis in `developer-churn.md`]
 
-#### 1. [POSITIVE FINDING]
-**Description:** [What's working well]
-
-**Evidence:**
-- [Specific data/examples]
-
-**Impact:**
-- [Why this is good for the team]
-
-**Recommendation:** [How to maintain or leverage this]
+</details>
 
 ---
 
-### ⚠️ Areas Requiring Attention
+## 🔐 Vulnerability Statistics Summary
 
-#### 🔴 High Priority: [ISSUE]
-**Description:** [What's wrong and why it's high priority]
+**Note:** Individual vulnerability attribution (committed by / approved by) is included in each finding in the security audit templates. This section shows aggregate statistics only.
 
-**Evidence:**
-- [Quantitative data]
-- [Specific examples]
+### Total Vulnerabilities from Security Audit
 
-**Impact:**
-- **Security Impact:** [Effect on security posture]
-- **Team Impact:** [Effect on team stability/morale]
+| Severity | Count | % of Total |
+|----------|-------|------------|
+| Critical | XX | XX% |
+| High | XX | XX% |
+| Medium | XX | XX% |
+| Low | XX | XX% |
+| Info | XX | XX% |
+| **Total** | **XX** | **100%** |
 
-**Recommended Actions:**
-- [ ] [Immediate action]
-- [ ] [Short-term action - 30 days]
-- [ ] [Long-term solution - 90 days]
+<details>
+<summary><b>📊 Developer Involvement in Vulnerabilities</b> (click to expand)</summary>
 
-**Owner:** [Who should drive this]
+### Vulnerabilities by Developer
 
----
+| Developer | Committed | Approved | Total Involvement | Primary Role |
+|-----------|-----------|----------|-------------------|--------------|
+| [Developer 1] | XX | XX | XX | [Committer/Reviewer/Both] |
+| [Developer 2] | XX | XX | XX | [Committer/Reviewer/Both] |
+| [Developer 3] | XX | XX | XX | [Committer/Reviewer/Both] |
+| [Developer 4] | XX | XX | XX | [Committer/Reviewer/Both] |
+| [Developer 5] | XX | XX | XX | [Committer/Reviewer/Both] |
 
-#### 🟡 Medium Priority: [ISSUE]
-**Description:** [What needs improvement]
+**Primary Role Classification:**
+- **Committer**: >70% of involvement from committed vulnerabilities
+- **Reviewer**: >70% of involvement from approved vulnerabilities
+- **Both**: Balanced between committing and reviewing
 
-**Evidence:**
-- [Data and examples]
+### Training Recommendations
 
-**Recommended Actions:**
-- [ ] [Action]
-- [ ] [Action]
+Based on vulnerability patterns:
 
-**Owner:** [Who should drive this]
+**[Developer Name]:**
+- Focus areas: [Top vulnerability categories]
+- Recommended training: [Specific security topics]
 
----
+**[Developer Name]:**
+- Focus areas: [Top vulnerability categories]
+- Recommended training: [Specific security topics]
 
-## Actionable Recommendations
+[See detailed vulnerability statistics in `vulnerability-statistics.md`]
 
-### For Security Improvement
-
-1. **Developer-Specific Security Training**
-   - Focus on: [Top vulnerability categories by developer]
-   - Recommended approach: [Training, workshops, pair programming]
-   - Timeline: [When to complete]
-
-2. **Code Review Enhancement**
-   - Add security checklist items for: [Common vulnerability patterns]
-   - Assign security-focused reviewers for: [High-risk areas]
-   - Implement automated checks for: [Specific vulnerabilities]
-
-3. **Architectural Improvements**
-   - Refactor high-risk modules: [Specific modules]
-   - Centralize security-critical code: [What to centralize]
-   - Add security boundaries: [Where needed]
-
-### For Team Stability
-
-1. **Knowledge Management**
-   - Document critical systems owned by departed developers
-   - Establish code ownership with at least 2 developers per area
-   - Create knowledge sharing sessions
-
-2. **Retention Strategies**
-   - Focus on new developers (<6 months tenure)
-   - Provide growth opportunities for mid-tenure developers
-   - Engage senior developers with leadership opportunities
-
-3. **Succession Planning**
-   - Cross-train developers on critical systems
-   - Identify and address single points of failure
-   - Create career development paths
+</details>
 
 ---
 
-## Maturity Assessment
+## 🎯 Recommendations
 
-### Team Stability Maturity
+### Immediate Actions (0-7 days)
 
-**Score:** [X] / 5
+1. **[Action]** — [Description and rationale]
+2. **[Action]** — [Description and rationale]
 
-| Level | Description | Assessment |
-|-------|-------------|------------|
-| 5 - Exceptional | Very low churn; excellent knowledge transfer | [ ] |
-| 4 - Strong | Low churn; good documentation and ownership | [ ] |
-| 3 - Proficient | Normal churn; adequate knowledge management | [ ] |
-| 2 - Developing | High churn; knowledge gaps emerging | [ ] |
-| 1 - Needs Attention | Very high churn; critical knowledge loss | [ ] |
+### Short-Term Actions (1-4 weeks)
 
-**Justification:** [Why this score was assigned]
+1. **[Action]** — [Description and rationale]
+2. **[Action]** — [Description and rationale]
 
----
+### Long-Term Actions (1-3 months)
 
-## Risk Assessment
-
-### High Risks 🔴
-
-#### 1. [RISK NAME]
-**Description:** [What could go wrong]
-
-**Probability:** [High/Medium/Low]  
-**Impact:** [High/Medium/Low]  
-**Overall Risk:** [Critical/High/Medium/Low]
-
-**Mitigation:**
-- [Action to reduce risk]
-- [Action to reduce risk]
-
-**Owner:** [Who owns this risk]
+1. **[Action]** — [Description and rationale]
+2. **[Action]** — [Description and rationale]
 
 ---
 
-### Medium Risks 🟡
+## 📈 Success Metrics
 
-#### 1. [RISK NAME]
-**Description:** [What could go wrong]
+Track these metrics to measure improvement:
 
-**Mitigation:** [Actions to take]
-
----
-
-## Follow-Up Actions
-
-### Immediate (0-7 days)
-- [ ] [Action with owner and deadline]
-- [ ] [Action with owner and deadline]
-
-### Short-Term (1-4 weeks)
-- [ ] [Action with owner and deadline]
-- [ ] [Action with owner and deadline]
-
-### Long-Term (1-3 months)
-- [ ] [Action with owner and deadline]
-- [ ] [Action with owner and deadline]
+| Metric | Baseline | 30-Day Target | 90-Day Target |
+|--------|----------|---------------|---------------|
+| 90-Day Churn Rate | XX% | XX% | <5% |
+| Average Tenure | XX months | XX months | >18 months |
+| Developers with Security Training | XX% | 50% | 100% |
+| Knowledge Risk Score | XX | XX | [Lower is better] |
 
 ---
 
-## Success Metrics
+## 📝 Notes
 
-### Key Metrics to Track
+[Any additional context, observations, or qualifications]
 
-**Vulnerability Metrics:**
-| Metric | Current | Target | Review Frequency |
-|--------|---------|--------|------------------|
-| Critical vulnerabilities per developer | [X] | [Y] | Monthly |
-| High vulnerabilities per developer | [X] | [Y] | Monthly |
-| Vulnerability remediation time | [X] days | [Y] days | Monthly |
+**Analysis Scope:**
+- Git history analyzed: [date range]
+- Total developers included: XX
+- Security vulnerabilities analyzed: XX (from `security/*.md`)
 
-**Churn Metrics:**
-| Metric | Current | Target | Review Frequency |
-|--------|---------|--------|------------------|
-| 90-day churn rate | [X]% | <5% | Monthly |
-| Average tenure | [X] months | 24+ months | Quarterly |
-| Knowledge transfer completion | [X]% | 100% | Per departure |
-
-### Follow-Up Schedule
-
-**30-Day Check-In** ([DATE])
-- Review progress on immediate actions
-- Check vulnerability remediation progress
-- Monitor team changes
-
-**60-Day Check-In** ([DATE])
-- Measure improvement in security practices
-- Assess knowledge transfer effectiveness
-- Review churn trends
-
-**90-Day Re-Assessment** ([DATE])
-- Complete full team assessment
-- Compare metrics to baseline
-- Plan next quarter's initiatives
-
----
-
-## Conclusion
-
-**Overall Assessment:** [One paragraph summary of team health regarding security responsibility and stability]
-
-**Primary Recommendation:** [Clear recommendation for leadership]
-
-**Next Steps:**
-1. [First step]
-2. [Second step]
-3. [Third step]
-
-**Long-Term Outlook:**
-- With recommended actions: [Positive outlook]
-- Without actions: [Risk outlook]
-
----
-
-## Appendix
-
-### Detailed Assessment Reports
-- [vulnerability-attribution.md](vulnerability-attribution.md) — Detailed attribution of security vulnerabilities to team members
-- [developer-churn.md](developer-churn.md) — Detailed analysis of developer tenure and churn patterns
-
-### Raw Data
-- Git blame analysis results
-- Commit history extracts
-- Security vulnerability mappings
-
----
-
-## Sign-Off
-
-**Prepared By:** [ASSESSOR NAME] _________________________ Date: ___________
-
-**Reviewed By:** [ENGINEERING MANAGER] _________________________ Date: ___________
-
-**Next Assessment Due:** [DATE]
-
+**Methodology:**
+- Churn analysis based on first/last commit dates from git history
+- Vulnerability attribution from "Committed By" and "Approved By" fields in security templates
+- Team health score based entirely on churn metrics (Team Stability Maturity)
