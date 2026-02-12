@@ -20,11 +20,12 @@
 | Critical Issues | 2 | 🔴 Immediate attention |
 | High Severity Issues | 8 | 🔴 Action needed |
 | Average Infrastructure Maturity | 3.2 / 5 | 🟡 Developing |
-| Team Collaboration Score | 3.8 / 5 | 🟢 Strong |
+| Team Stability Maturity | 4.0 / 5 | 🟢 Strong |
+| Team Churn Rate (Annual) | 12% | 🟢 Low |
 
 ### Key Takeaways
 
-1. **Strong team collaboration with 64% of commits being reviewed or co-authored**
+1. **Stable team with 12% annual churn and 14.5 months average tenure**
 2. **Two critical security vulnerabilities require immediate attention: SQL injection risk and exposed API keys**
 3. **Infrastructure modernization in progress but testing coverage needs improvement**
 
@@ -167,53 +168,75 @@ Scores are normalized by codebase size (LOC) or resource count to ensure fair co
 
 ## 👥 Team Score Breakdown
 
-**Score: 82 / 100** — Level 4 — Good
+**Score: 85 / 100** — Level 4 — Good
 
 ### Scoring Rubric
 
 | Level | Score | Your Status | Criteria |
 |-------|-------|-------------|----------|
-| **5 — Excellent** | 95 | ❌ | Avg ≥4.5, >80% quality commits, >70% collaboration |
-| **4 — Good** | 82 | ✅ | Avg ≥3.8, >60% quality commits, >50% collaboration |
-| **3 — Fair** | 65 | ❌ | Avg ≥2.8, >40% quality commits, >30% collaboration |
-| **2 — Poor** | 42 | ❌ | Avg ≥2.0 |
-| **1 — Critical** | 15 | ❌ | Avg <2.0 or erratic patterns |
+| **5 — Excellent** | 95 | ❌ | Stability ≥4.5, ≤10% annual churn, ≥18 months avg tenure |
+| **4 — Good** | 82 | ✅ | Stability ≥3.5, ≤15% annual churn, ≥12 months avg tenure |
+| **3 — Fair** | 65 | ❌ | Stability ≥2.5, ≤25% annual churn, ≥8 months avg tenure |
+| **2 — Poor** | 42 | ❌ | Stability ≥1.5, ≤35% annual churn, ≥5 months avg tenure |
+| **1 — Critical** | 15 | ❌ | Stability <1.5 or >35% annual churn or <5 months avg tenure |
 
 ### Your Metrics
 
-| Metric | Score (1-5) | Percentage | Status |
-|--------|-------------|------------|--------|
-| Commit Quality | 3.5 | 68% well-formatted | 🟢 |
-| Collaboration | 4.0 | 64% reviewed/co-authored | 🟢 |
-| Velocity | 3.8 | — | 🟢 |
-| Documentation Coverage | 3.8 | 62% of files | 🟡 |
-| **Average** | **3.78** | | |
+| Metric | Value | Status |
+|--------|-------|--------|
+| Team Stability Maturity | 4.0 / 5 | 🟢 |
+| Active Developers | 4 | — |
+| Annual Churn Rate (Projected) | 12% | 🟢 |
+| Average Developer Tenure | 14.5 months | 🟢 |
+| New Developers | 1 | — |
+| Departed Developers | 0 | — |
 
-**Modifiers Applied:**
-- Collaboration bonus: +9.1 points
-- Documentation penalty: -0.0 points (above 50% threshold)
-- **Final Score:** 82/100
+**Base Score:** Team Stability Maturity × 20 = 80
+
+**Adjustments:**
+- Tenure bonus: +5 points (avg tenure > 12 months)
+- Departure penalty: -0 points (no recent departures)
+
+**Final Team Health Score:** 85 / 100
 
 <details>
-<summary><b>📋 Team Activity Summary</b> (click to expand)</summary>
+<summary><b>📋 Developer Churn & Stability</b> (click to expand)</summary>
 
-| Contributor | Commits | Quality Score | Collaboration | Notes |
-|-------------|---------|---------------|---------------|-------|
-| alice@example.com | 87 | 78% | 71% | Strong PR review participation |
-| bob@example.com | 124 | 62% | 58% | Most active contributor |
-| charlie@example.com | 45 | 71% | 62% | Focus on infrastructure work |
-| diana@example.com | 38 | 65% | 55% | New team member, improving |
+**Team Stability Assessment:**
+- Churn rate: 12% (annual projected) — Good stability
+- Average tenure: 14.5 months — Experienced team
+- No recent departures in assessment window
+- 1 new developer onboarded successfully
+
+**Vulnerability Attribution Summary:**
+- Total vulnerabilities analyzed: 23
+- Developers with committed vulnerabilities: 3
+- Developers with approved vulnerabilities: 2
+
+**Top Contributors to Vulnerabilities (Commits):**
+
+| Developer | Critical | High | Medium | Low | Total |
+|-----------|----------|------|--------|-----|-------|
+| bob@example.com | 0 | 2 | 5 | 3 | 10 |
+| alice@example.com | 0 | 1 | 3 | 2 | 6 |
+| charlie@example.com | 0 | 0 | 4 | 3 | 7 |
+
+**Top Approvers of Vulnerabilities (Reviews):**
+
+| Developer | Critical | High | Medium | Low | Total |
+|-----------|----------|------|--------|-----|-------|
+| alice@example.com | 0 | 2 | 6 | 4 | 12 |
+| charlie@example.com | 0 | 1 | 6 | 1 | 8 |
 
 **Team Strengths:**
-- High collaboration rate with most commits being reviewed before merge
-- Consistent commit velocity with steady progress
-- Good use of feature branches and pull requests
-- Active code review culture
+- Stable team with low turnover and good tenure
+- No critical or high-severity vulnerabilities in most recent commits
+- Active code review culture with vulnerabilities spread across multiple reviewers
 
 **Areas for Improvement:**
-- 32% of commits lack proper formatting (no issue reference or clear description)
-- Documentation coverage varies by module (core: 85%, utilities: 40%)
-- Some long-running branches need better integration practices
+- Provide security-focused code review training for alice@ and charlie@
+- Implement security linting tools to catch common vulnerability patterns
+- Consider security champions program to improve awareness
 
 [See detailed team reports in `team/` directory]
 
