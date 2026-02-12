@@ -367,8 +367,8 @@ Access Logging: [Enabled/Disabled]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Recommendations:**
@@ -421,8 +421,8 @@ Approval Gates: [Configured/Not Configured]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Recommendations:**
@@ -475,8 +475,8 @@ Templates Scanned: [Number]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Recommendations:**
@@ -500,8 +500,8 @@ Templates Scanned: [Number]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Monitoring Configuration:**
@@ -554,8 +554,8 @@ Alert Recipients: [Team/Email]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **IR Readiness:**
@@ -583,8 +583,8 @@ Mean Time to Detect: [Hours]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Recommendations:**

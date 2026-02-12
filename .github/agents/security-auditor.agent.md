@@ -62,9 +62,29 @@ For each checklist item in the template:
 Fill in all assessment sections:
 - **Finding ratings**: Set `[ ] Pass [x] Fail [ ] N/A` etc.
 - **Issues Found tables**: Add rows with severity, issue description, file
-  location, and impact
+  location, impact, **committed by** (developer who wrote the code), and
+  **approved by** (reviewer who approved the PR)
 - **Configuration sections**: Fill with actual values found in code
 - **Recommendations**: Provide specific, actionable recommendations
+
+### 4.5. Add Git Blame Attribution (NEW)
+
+For each vulnerability identified:
+1. Use `git blame -L [line],[line] [file] --line-porcelain` to identify who committed the vulnerable code
+2. Extract: commit SHA, author name, author email, and commit date
+3. Try to identify the PR reviewer using `git log --format=fuller [commit_sha]`
+4. Add attribution columns to the Issues Found table:
+   - **Committed By**: Developer name and email
+   - **Approved By**: Reviewer name and email (or "Unknown" if not available)
+
+**Example Issues Found table format:**
+
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
+| Critical | SQL injection vulnerability | auth.js:45 | john@example.com | jane@example.com | Allows arbitrary database access |
+
+**Important:** Keep attribution factual and non-judgmental. The purpose is to
+identify training needs and improve security awareness, not to blame individuals.
 
 ### 5. Write Output
 

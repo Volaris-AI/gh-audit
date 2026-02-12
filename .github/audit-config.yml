@@ -79,21 +79,23 @@ review:
       # Below level-2 thresholds = Level 1 (Score: 15)
     
     team:
-      # Average maturity and collaboration
+      # Team Stability Maturity (1-5) and churn-based scoring
       level-5:  # Score: 95
-        avg-min: 4.5
-        commit-quality-min: 80  # % well-formatted
-        collaboration-min: 70   # % reviewed/co-authored
+        stability-min: 4.5
+        annual-churn-max: 10
+        avg-tenure-min: 18  # months
       level-4:  # Score: 82
-        avg-min: 3.8
-        commit-quality-min: 60
-        collaboration-min: 50
+        stability-min: 3.5
+        annual-churn-max: 15
+        avg-tenure-min: 12  # months
       level-3:  # Score: 65
-        avg-min: 2.8
-        commit-quality-min: 40
-        collaboration-min: 30
+        stability-min: 2.5
+        annual-churn-max: 25
+        avg-tenure-min: 8  # months
       level-2:  # Score: 42
-        avg-min: 2.0
+        stability-min: 1.5
+        annual-churn-max: 35
+        avg-tenure-min: 5  # months
       # Below level-2 thresholds = Level 1 (Score: 15)
     
     hosting:
