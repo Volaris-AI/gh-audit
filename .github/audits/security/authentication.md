@@ -87,8 +87,8 @@ _[List what was not assessed]_
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Current Policy:**
@@ -116,8 +116,8 @@ Max Age: [Days]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Hashing Configuration:**
@@ -148,8 +148,8 @@ Salt Method: [Per-password/Global]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **MFA Methods Supported:**
@@ -177,8 +177,8 @@ Salt Method: [Per-password/Global]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Test Results:**
@@ -210,8 +210,8 @@ Details: [Details]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Session Configuration:**
@@ -238,8 +238,8 @@ Cookie Flags: [Secure, HttpOnly, SameSite]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Timeout Configuration:**
@@ -307,8 +307,8 @@ Refresh Token Rotation: [Yes/No]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **JWT Configuration:**
@@ -346,8 +346,8 @@ Details: [Details]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Lockout Configuration:**
@@ -383,8 +383,8 @@ Details: [Details]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Recommendations:**
@@ -408,8 +408,8 @@ Details: [Details]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Reset Configuration:**
@@ -444,8 +444,8 @@ Details: [Details]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Recommendations:**
@@ -469,8 +469,8 @@ Details: [Details]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **SAML Configuration:**
@@ -498,8 +498,8 @@ Signature Algorithm: [Algorithm]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Recommendations:**

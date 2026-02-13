@@ -256,8 +256,8 @@ Log Output: [Details]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Recommendations:**
@@ -433,8 +433,8 @@ Key Management: [KMS/Vault]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Integrity Mechanisms:**

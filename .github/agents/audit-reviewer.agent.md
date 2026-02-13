@@ -223,43 +223,67 @@ Scores are normalized by codebase size (LOC) or resource count to ensure fair co
 
 | Level | Score | Your Status | Criteria |
 |-------|-------|-------------|----------|
-| **5 — Excellent** | 95 | [✅ / ❌] | Avg ≥4.5, >80% quality commits, >70% collaboration |
-| **4 — Good** | 82 | [✅ / ❌] | Avg ≥3.8, >60% quality commits, >50% collaboration |
-| **3 — Fair** | 65 | [✅ / ❌] | Avg ≥2.8, >40% quality commits, >30% collaboration |
-| **2 — Poor** | 42 | [✅ / ❌] | Avg ≥2.0 |
-| **1 — Critical** | 15 | [✅ / ❌] | Avg <2.0 or erratic patterns |
+| **5 — Excellent** | 95 | [✅ / ❌] | Stability ≥4.5, ≤10% annual churn, ≥18 months avg tenure |
+| **4 — Good** | 82 | [✅ / ❌] | Stability ≥3.5, ≤15% annual churn, ≥12 months avg tenure |
+| **3 — Fair** | 65 | [✅ / ❌] | Stability ≥2.5, ≤25% annual churn, ≥8 months avg tenure |
+| **2 — Poor** | 42 | [✅ / ❌] | Stability ≥1.5, ≤35% annual churn, ≥5 months avg tenure |
+| **1 — Critical** | 15 | [✅ / ❌] | Stability <1.5 or >35% annual churn or <5 months avg tenure |
 
 ### Your Metrics
 
-| Metric | Score (1-5) | Percentage | Status |
-|--------|-------------|------------|--------|
-| Commit Quality | X.X | XX% well-formatted | [🟢 / 🟡 / 🔴] |
-| Collaboration | X.X | XX% reviewed/co-authored | [🟢 / 🟡 / 🔴] |
-| Velocity | X.X | — | [🟢 / 🟡 / 🔴] |
-| Documentation Coverage | X.X | XX% of files | [🟢 / 🟡 / 🔴] |
-| **Average** | **X.X** | | |
+| Metric | Value | Status |
+|--------|-------|--------|
+| Team Stability Maturity | X.X / 5 | [🟢 / 🟡 / 🔴] |
+| Active Developers | XX | — |
+| Annual Churn Rate (Projected) | XX% | [🟢 / 🟡 / 🔴] |
+| Average Developer Tenure | XX months | [🟢 / 🟡 / 🔴] |
+| New Developers | X | — |
+| Departed Developers | X | — |
 
-**Modifiers Applied:**
-- Collaboration bonus: +X.X points
-- Documentation penalty: -X.X points
-- **Final Score:** XX/100
+**Base Score:** Team Stability Maturity × 20 = XX
+
+**Adjustments:**
+- Tenure bonus: +X points (if avg tenure > 18 months)
+- Departure penalty: -X points (if recent departures exceed threshold)
+
+**Final Team Health Score:** XX / 100
 
 <details>
-<summary><b>📋 Team Activity Summary</b> (click to expand)</summary>
+<summary><b>📋 Developer Churn & Stability</b> (click to expand)</summary>
 
-| Contributor | Commits | Quality Score | Collaboration | Notes |
-|-------------|---------|---------------|---------------|-------|
-| [Developer 1] | XX | XX% | XX% | [Brief note] |
-| [Developer 2] | XX | XX% | XX% | [Brief note] |
-| [Developer 3] | XX | XX% | XX% | [Brief note] |
+**Team Stability Assessment:**
+- Churn rate: XX% (annual projected)
+- Average tenure: XX months
+- [Brief stability assessment]
+
+**Vulnerability Attribution Summary:**
+- Total vulnerabilities analyzed: XX
+- Developers with committed vulnerabilities: XX
+- Developers with approved vulnerabilities: XX
+
+**Top Contributors to Vulnerabilities (Commits):**
+
+| Developer | Critical | High | Medium | Low | Total |
+|-----------|----------|------|--------|-----|-------|
+| [Dev 1] | X | X | X | X | XX |
+| [Dev 2] | X | X | X | X | XX |
+| [Dev 3] | X | X | X | X | XX |
+
+**Top Approvers of Vulnerabilities (Reviews):**
+
+| Developer | Critical | High | Medium | Low | Total |
+|-----------|----------|------|--------|-----|-------|
+| [Dev 1] | X | X | X | X | XX |
+| [Dev 2] | X | X | X | X | XX |
+| [Dev 3] | X | X | X | X | XX |
 
 **Team Strengths:**
-- [Positive pattern 1]
-- [Positive pattern 2]
+- [Positive finding about team stability]
+- [Positive finding about security awareness]
 
 **Areas for Improvement:**
-- [Gap or weakness 1]
-- [Gap or weakness 2]
+- [Area needing improvement based on churn]
+- [Area needing improvement based on vulnerability patterns]
 
 [See detailed team reports in `team/` directory]
 

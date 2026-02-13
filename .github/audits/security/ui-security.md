@@ -264,8 +264,8 @@ Result: [Pass/Fail]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Recommendations:**
@@ -384,8 +384,8 @@ element.innerHTML = DOMPurify.sanitize(userInput);
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Recommendations:**

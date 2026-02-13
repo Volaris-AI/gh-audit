@@ -118,8 +118,8 @@ Details: [Details]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Recommendations:**
@@ -247,8 +247,8 @@ TLS Version: [1.2, 1.3]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Recommendations:**
@@ -301,8 +301,8 @@ Details: [Details]
 
 **Issues Found:**
 
-| Severity | Issue | Location | Impact |
-|----------|-------|----------|--------|
+| Severity | Issue | Location | Committed By | Approved By | Impact |
+|----------|-------|----------|--------------|-------------|--------|
 | | | | |
 
 **Recommendations:**

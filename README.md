@@ -18,7 +18,7 @@ When triggered, the system:
 |-------|-----------------|--------|
 | **Security** | Vulnerabilities, auth, API security, crypto, dependencies | Static code analysis |
 | **Infrastructure** | Architecture maturity, tech stack, build tooling, testing | Static code analysis |
-| **Team** | Commit quality, collaboration, velocity, contributions | Git history analysis |
+| **Team** | Developer churn, team stability, vulnerability attribution | Git history analysis + git blame |
 | **Hosting (AWS)** | IAM, networking, compute, storage, logging, secrets | IaC analysis (Terraform, CloudFormation) |
 | **Hosting (Azure)** | Identity, networking, compute, storage, logging, secrets | IaC analysis (Terraform, Bicep) |
 
@@ -111,9 +111,8 @@ audits/YYYY-MM-DD/
     ...
     executive-summary.md
   team/
-    commit-quality.md
-    velocity-metrics.md
-    ...
+    vulnerability-attribution.md
+    developer-churn.md
     executive-summary.md
   hosting/
     aws/                        # Only if AWS IaC detected
@@ -192,7 +191,7 @@ The executive overview includes a weighted health score (0-100) using **rubric-b
 |-------|---------------|----------------|
 | Security | 35% | Rubric based on findings per 1,000 LOC (5 levels) |
 | Infrastructure | 30% | Rubric based on maturity dimensions (1-5 scale per dimension) |
-| Team | 20% | Rubric based on git metrics and collaboration (1-5 scale) |
+| Team | 20% | Rubric based on team stability and churn (1-5 scale) |
 | Hosting | 15% | Rubric based on findings per 10 IaC resources (5 levels) |
 
 ### Rubric Levels
@@ -211,7 +210,7 @@ Scores are normalized by codebase size or resource count to ensure fair comparis
 
 - **Security**: Findings per 1,000 lines of code (LOC)
 - **Infrastructure**: Average maturity with penalty for weak dimensions
-- **Team**: Maturity with bonuses/penalties for collaboration and documentation
+- **Team**: Team Stability Maturity (1-5) based on churn rate and tenure, with adjustments
 - **Hosting**: Findings per 10 IaC resources
 
 This rubric-based approach provides **transparent, evidence-based scoring** that's challenging but fair. Most functional codebases will score in Level 3-4, with Level 5 reserved for truly excellent implementations.
